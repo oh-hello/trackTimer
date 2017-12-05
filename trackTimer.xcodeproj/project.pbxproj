@@ -14,6 +14,8 @@
 		DE7B04681FD70A4700E6DFAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE7B04661FD70A4700E6DFAB /* LaunchScreen.storyboard */; };
 		DE7B04731FD70A4700E6DFAB /* trackTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B04721FD70A4700E6DFAB /* trackTimerTests.swift */; };
 		DE7B047E1FD70A4700E6DFAB /* trackTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B047D1FD70A4700E6DFAB /* trackTimerUITests.swift */; };
+		DE7B048C1FD71A8400E6DFAB /* Fjalla_One in Resources */ = {isa = PBXBuildFile; fileRef = DE7B048B1FD71A8400E6DFAB /* Fjalla_One */; };
+		DE7B04901FD71AF600E6DFAB /* Open_Sans in Resources */ = {isa = PBXBuildFile; fileRef = DE7B048F1FD71AF600E6DFAB /* Open_Sans */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		DE7B04791FD70A4700E6DFAB /* trackTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = trackTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7B047D1FD70A4700E6DFAB /* trackTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trackTimerUITests.swift; sourceTree = "<group>"; };
 		DE7B047F1FD70A4700E6DFAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE7B048B1FD71A8400E6DFAB /* Fjalla_One */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fjalla_One; sourceTree = "<group>"; };
+		DE7B048F1FD71AF600E6DFAB /* Open_Sans */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Open_Sans; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 		DE7B045C1FD70A4700E6DFAB /* trackTimer */ = {
 			isa = PBXGroup;
 			children = (
+				DE7B048F1FD71AF600E6DFAB /* Open_Sans */,
+				DE7B048B1FD71A8400E6DFAB /* Fjalla_One */,
 				DE7B045D1FD70A4700E6DFAB /* AppDelegate.swift */,
 				DE7B045F1FD70A4700E6DFAB /* ViewController.swift */,
 				DE7B04611FD70A4700E6DFAB /* Main.storyboard */,
@@ -233,7 +239,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE7B04681FD70A4700E6DFAB /* LaunchScreen.storyboard in Resources */,
+				DE7B048C1FD71A8400E6DFAB /* Fjalla_One in Resources */,
 				DE7B04651FD70A4700E6DFAB /* Assets.xcassets in Resources */,
+				DE7B04901FD71AF600E6DFAB /* Open_Sans in Resources */,
 				DE7B04631FD70A4700E6DFAB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +515,7 @@
 				DE7B04841FD70A4700E6DFAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DE7B04851FD70A4700E6DFAB /* Build configuration list for PBXNativeTarget "trackTimerTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +524,7 @@
 				DE7B04871FD70A4700E6DFAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DE7B04881FD70A4700E6DFAB /* Build configuration list for PBXNativeTarget "trackTimerUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +533,7 @@
 				DE7B048A1FD70A4700E6DFAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
