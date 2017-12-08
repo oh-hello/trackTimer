@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE07BDCB1FDB01060046E484 /* GlobalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE07BDCA1FDB01060046E484 /* GlobalData.swift */; };
+		DE07BDCD1FDB01640046E484 /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE07BDCC1FDB01640046E484 /* Runner.swift */; };
+		DE07BDCF1FDB0E950046E484 /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE07BDCE1FDB0E950046E484 /* Race.swift */; };
 		DE3759C81FD86D1A001C30E0 /* FjallaOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE3759C71FD86D1A001C30E0 /* FjallaOne-Regular.ttf */; };
 		DE3759CA1FD86D32001C30E0 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE3759C91FD86D32001C30E0 /* OpenSans-Regular.ttf */; };
+		DE670AE81FD9C06C00D4454A /* RaceCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE670AE71FD9C06C00D4454A /* RaceCreationViewController.swift */; };
 		DE7B045E1FD70A4700E6DFAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B045D1FD70A4700E6DFAB /* AppDelegate.swift */; };
 		DE7B04601FD70A4700E6DFAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B045F1FD70A4700E6DFAB /* ViewController.swift */; };
 		DE7B04631FD70A4700E6DFAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE7B04611FD70A4700E6DFAB /* Main.storyboard */; };
@@ -36,8 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE07BDCA1FDB01060046E484 /* GlobalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalData.swift; sourceTree = "<group>"; };
+		DE07BDCC1FDB01640046E484 /* Runner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Runner.swift; sourceTree = "<group>"; };
+		DE07BDCE1FDB0E950046E484 /* Race.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Race.swift; sourceTree = "<group>"; };
 		DE3759C71FD86D1A001C30E0 /* FjallaOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FjallaOne-Regular.ttf"; path = "Fjalla_One/FjallaOne-Regular.ttf"; sourceTree = "<group>"; };
 		DE3759C91FD86D32001C30E0 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Regular.ttf"; path = "Open_Sans/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		DE670AE71FD9C06C00D4454A /* RaceCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaceCreationViewController.swift; sourceTree = "<group>"; };
 		DE7B045A1FD70A4700E6DFAB /* trackTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trackTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7B045D1FD70A4700E6DFAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE7B045F1FD70A4700E6DFAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,11 +111,15 @@
 			children = (
 				DE3759C91FD86D32001C30E0 /* OpenSans-Regular.ttf */,
 				DE3759C71FD86D1A001C30E0 /* FjallaOne-Regular.ttf */,
+				DE07BDCA1FDB01060046E484 /* GlobalData.swift */,
+				DE07BDCE1FDB0E950046E484 /* Race.swift */,
+				DE07BDCC1FDB01640046E484 /* Runner.swift */,
 				DE7B045D1FD70A4700E6DFAB /* AppDelegate.swift */,
 				DE7B045F1FD70A4700E6DFAB /* ViewController.swift */,
+				DE670AE71FD9C06C00D4454A /* RaceCreationViewController.swift */,
 				DE7B04611FD70A4700E6DFAB /* Main.storyboard */,
-				DE7B04641FD70A4700E6DFAB /* Assets.xcassets */,
 				DE7B04661FD70A4700E6DFAB /* LaunchScreen.storyboard */,
+				DE7B04641FD70A4700E6DFAB /* Assets.xcassets */,
 				DE7B04691FD70A4700E6DFAB /* Info.plist */,
 			);
 			path = trackTimer;
@@ -269,6 +281,10 @@
 			files = (
 				DE7B04601FD70A4700E6DFAB /* ViewController.swift in Sources */,
 				DE7B045E1FD70A4700E6DFAB /* AppDelegate.swift in Sources */,
+				DE07BDCD1FDB01640046E484 /* Runner.swift in Sources */,
+				DE07BDCB1FDB01060046E484 /* GlobalData.swift in Sources */,
+				DE07BDCF1FDB0E950046E484 /* Race.swift in Sources */,
+				DE670AE81FD9C06C00D4454A /* RaceCreationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
