@@ -26,7 +26,10 @@ class Race {
             return nil
         }
         
-        
+        //runnerList must have between 1 and 10 entries
+        guard runnerList.count <= 10 && runnerList.count >= 1 else {
+            return nil
+        }
         
         //Initialize properties
         self.date = date
