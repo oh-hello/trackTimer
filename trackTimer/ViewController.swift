@@ -9,7 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    //MARK: Properties
+    @IBOutlet weak var logo: UIImageView!
+    @IBOutlet weak var trackTimerLabel: UILabel!
+    @IBOutlet weak var newRace: UIButton!
+    @IBOutlet weak var archive: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,6 +26,20 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //MARK: Actions
+   @IBAction func launchSegue(_ sender: UIButton) {
+    switch sender {
+    case newRace:
+        performSegue(withIdentifier: "toRaceCreation", sender: self)
+    case archive:
+        performSegue(withIdentifier: "toArchive", sender: self)
+    default:
+        break
+    }
+    
+    }
+    
 
 
 }

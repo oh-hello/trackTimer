@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G1036" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G1114" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -34,6 +34,9 @@
                                 <state key="normal" title="New Race">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="launchSegue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7hE-jZ-MIs"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5X-KG-Dqh">
                                 <rect key="frame" x="558" y="568" width="200" height="80"/>
@@ -43,6 +46,9 @@
                                 <state key="normal" title="Archive">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="launchSegue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uhs-dV-irm"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="trackTimer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q69-uR-lqM">
                                 <rect key="frame" x="266" y="464" width="492" height="70"/>
@@ -58,10 +64,46 @@
                         </subviews>
                         <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="archive" destination="P5X-KG-Dqh" id="k3S-zf-ez8"/>
+                        <outlet property="logo" destination="eVG-kw-GLW" id="3Ak-rK-Vr6"/>
+                        <outlet property="newRace" destination="ZMZ-A0-FG3" id="wMd-Ju-Ngj"/>
+                        <outlet property="trackTimerLabel" destination="q69-uR-lqM" id="rLa-Vd-GNc"/>
+                        <segue destination="GX4-hU-Xbz" kind="show" identifier="toRaceCreation" animates="NO" id="h52-zy-mtI"/>
+                        <segue destination="WQ3-N8-9s0" kind="show" identifier="toArchive" animates="NO" id="D9d-py-9qY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="24.609375" y="38.28125"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="anQ-r9-RDz">
+            <objects>
+                <tableViewController id="WQ3-N8-9s0" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="vN2-tU-wab">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="FIF-MP-EZP">
+                                <rect key="frame" x="0.0" y="28" width="1024" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FIF-MP-EZP" id="rzv-s9-AMv">
+                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WQ3-N8-9s0" id="LQC-Ky-Ben"/>
+                            <outlet property="delegate" destination="WQ3-N8-9s0" id="LQt-v6-I5e"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kNg-qT-lu5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="25" y="722"/>
         </scene>
         <!--Race Creation View Controller-->
         <scene sceneID="Xma-ZN-RtE">
