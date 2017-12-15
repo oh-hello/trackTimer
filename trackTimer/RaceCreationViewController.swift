@@ -10,10 +10,22 @@ import UIKit
 
 class RaceCreationViewController: UIViewController {
 
+    //MARK: Properties
+    @IBOutlet weak var sectionTitle: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        //automatically set race date when view loads
+        let currentDate = NSDate()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.locale = NSLocale.current
+        dateFormatter.dateStyle = .short
+        dateLabel.text = dateFormatter.string(from: currentDate as Date)
+
     }
 
     override func didReceiveMemoryWarning() {

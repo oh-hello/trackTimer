@@ -28,15 +28,15 @@ class ViewController: UIViewController {
     }
     
     //MARK: Actions
-   @IBAction func launchSegue(_ sender: UIButton) {
-    switch sender {
-    case newRace:
-        performSegue(withIdentifier: "toRaceCreation", sender: self)
-    case archive:
-        performSegue(withIdentifier: "toArchive", sender: self)
-    default:
-        break
-    }
+    @IBAction func launchSegue(_ sender: UIButton) {
+        switch sender {
+        case newRace:
+            performSegue(withIdentifier: "toRaceCreation", sender: self)
+        case archive:
+            performSegue(withIdentifier: "toArchive", sender: self)
+        default:
+            break
+        }
     
     }
     
