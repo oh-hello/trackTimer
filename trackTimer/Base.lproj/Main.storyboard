@@ -69,7 +69,7 @@
                         <outlet property="logo" destination="eVG-kw-GLW" id="3Ak-rK-Vr6"/>
                         <outlet property="newRace" destination="ZMZ-A0-FG3" id="wMd-Ju-Ngj"/>
                         <outlet property="trackTimerLabel" destination="q69-uR-lqM" id="rLa-Vd-GNc"/>
-                        <segue destination="GX4-hU-Xbz" kind="show" identifier="toRaceCreation" animates="NO" id="h52-zy-mtI"/>
+                        <segue destination="kz2-ZX-ML0" kind="show" identifier="toRaceCreation" animates="NO" id="h52-zy-mtI"/>
                         <segue destination="WQ3-N8-9s0" kind="show" identifier="toArchive" animates="NO" id="D9d-py-9qY"/>
                     </connections>
                 </viewController>
@@ -105,7 +105,7 @@
             </objects>
             <point key="canvasLocation" x="25" y="722"/>
         </scene>
-        <!--Race Creation View Controller-->
+        <!--Enter Race Information-->
         <scene sceneID="Xma-ZN-RtE">
             <objects>
                 <viewController id="GX4-hU-Xbz" customClass="RaceCreationViewController" customModule="trackTimer" customModuleProvider="target" sceneMemberID="viewController">
@@ -117,70 +117,96 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Race Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHb-VA-tS1">
-                                <rect key="frame" x="294" y="55" width="436" height="73"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="FjallaOne-Regular" family="Fjalla One" pointSize="36"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DlU-T3-L2h">
-                                <rect key="frame" x="61" y="149" width="110" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="FjallaOne-Regular" family="Fjalla One" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <color key="highlightedColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Practice" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aFO-gp-2b2">
-                                <rect key="frame" x="179" y="149" width="250" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="FjallaOne-Regular" family="Fjalla One" pointSize="24"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="light" returnKeyType="done"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Distance" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sga-q3-Bkn">
-                                <rect key="frame" x="437" y="149" width="150" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="FjallaOne-Regular" family="Fjalla One" pointSize="24"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="light" returnKeyType="done"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of Runners:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iG8-Xw-uqT">
-                                <rect key="frame" x="595" y="149" width="210" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="FjallaOne-Regular" family="Fjalla One" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <pickerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KmG-pK-WCq">
-                                <rect key="frame" x="813" y="149" width="150" height="50"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Jl-eP-9nF">
-                                <rect key="frame" x="61" y="225" width="110" height="52"/>
+                                <rect key="frame" x="370" y="169" width="110" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of Runners:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iG8-Xw-uqT">
+                                <rect key="frame" x="535" y="83" width="176" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="FjallaOne-Regular" family="Fjalla One" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DlU-T3-L2h">
+                                <rect key="frame" x="106" y="84" width="81" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="FjallaOne-Regular" family="Fjalla One" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <color key="highlightedColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Practice" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aFO-gp-2b2">
+                                <rect key="frame" x="195" y="84" width="213" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="FjallaOne-Regular" family="Fjalla One" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="light" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Distance" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sga-q3-Bkn">
+                                <rect key="frame" x="416" y="83" width="111" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="FjallaOne-Regular" family="Fjalla One" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="light" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <pickerView opaque="NO" contentMode="left" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KmG-pK-WCq">
+                                <rect key="frame" x="719" y="83" width="200" height="50"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Enter Race Information" id="cQQ-CO-sSJ">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="tDq-U6-uzQ">
+                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="cancel:" destination="GX4-hU-Xbz" id="Ryb-NU-6jP"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="CME-Lq-Wyp">
+                            <connections>
+                                <segue destination="VIE-ns-urE" kind="unwind" unwindAction="unwindToLandingViewWithSender:" id="Du5-ej-XIs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dateLabel" destination="DlU-T3-L2h" id="NoE-nI-9di"/>
                         <outlet property="distanceField" destination="Sga-q3-Bkn" id="MAa-Gu-vN2"/>
                         <outlet property="locationField" destination="aFO-gp-2b2" id="Wp5-aW-Nx3"/>
                         <outlet property="numberPicker" destination="KmG-pK-WCq" id="plB-OE-6tA"/>
                         <outlet property="pickerTest" destination="3Jl-eP-9nF" id="e4v-bj-Ois"/>
-                        <outlet property="sectionTitle" destination="NHb-VA-tS1" id="po3-yc-2X6"/>
+                        <outlet property="saveButton" destination="CME-Lq-Wyp" id="Vc1-dd-Y85"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="esm-59-gox" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="VIE-ns-urE" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1392.7734375" y="37.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FiY-p2-qBl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kz2-ZX-ML0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Ao6-4O-rKq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GX4-hU-Xbz" kind="relationship" relationship="rootViewController" id="9KG-Bv-4CF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vQW-Fy-Ivh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="668.5546875" y="37.5"/>
         </scene>
