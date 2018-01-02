@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		207D279A1FFBF64700234726 /* MasterTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207D27991FFBF64700234726 /* MasterTimerViewController.swift */; };
 		DE07BDCB1FDB01060046E484 /* GlobalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE07BDCA1FDB01060046E484 /* GlobalData.swift */; };
 		DE07BDCD1FDB01640046E484 /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE07BDCC1FDB01640046E484 /* Runner.swift */; };
 		DE07BDCF1FDB0E950046E484 /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE07BDCE1FDB0E950046E484 /* Race.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		207D27991FFBF64700234726 /* MasterTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterTimerViewController.swift; sourceTree = "<group>"; };
 		DE07BDCA1FDB01060046E484 /* GlobalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalData.swift; sourceTree = "<group>"; };
 		DE07BDCC1FDB01640046E484 /* Runner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Runner.swift; sourceTree = "<group>"; };
 		DE07BDCE1FDB0E950046E484 /* Race.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Race.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				DE670AE71FD9C06C00D4454A /* RaceCreationViewController.swift */,
 				DE33D5431FE43D1E00730121 /* ArchiveTableViewController.swift */,
 				DE7B04611FD70A4700E6DFAB /* Main.storyboard */,
+				207D27991FFBF64700234726 /* MasterTimerViewController.swift */,
 				DE7B04661FD70A4700E6DFAB /* LaunchScreen.storyboard */,
 				DE7B04641FD70A4700E6DFAB /* Assets.xcassets */,
 				DE7B04691FD70A4700E6DFAB /* Info.plist */,
@@ -298,6 +301,7 @@
 				DE07BDCB1FDB01060046E484 /* GlobalData.swift in Sources */,
 				DE33D5441FE43D1E00730121 /* ArchiveTableViewController.swift in Sources */,
 				DE07BDCF1FDB0E950046E484 /* Race.swift in Sources */,
+				207D279A1FFBF64700234726 /* MasterTimerViewController.swift in Sources */,
 				DE670AE81FD9C06C00D4454A /* RaceCreationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
