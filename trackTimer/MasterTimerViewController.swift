@@ -10,8 +10,14 @@ import UIKit
 
 class MasterTimerViewController: UIViewController {
     
-    //Timer Variables
+    //Race class autoset labels
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
     
+    
+    
+    //Timer Variables
     @IBOutlet weak var masterTimerClock: UILabel!
     var timer = Timer()
     var startTime = TimeInterval()
