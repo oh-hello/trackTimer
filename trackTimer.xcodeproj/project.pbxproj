@@ -16,6 +16,7 @@
 		DE4032971FE2F26500B1E617 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE4032961FE2F26500B1E617 /* OpenSans-BoldItalic.ttf */; };
 		DE4032991FE2F27C00B1E617 /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE4032981FE2F27C00B1E617 /* OpenSans-Italic.ttf */; };
 		DE670AE81FD9C06C00D4454A /* RaceCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE670AE71FD9C06C00D4454A /* RaceCreationViewController.swift */; };
+		DE77D2A21FED813D00DA632A /* RunnerControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE77D2A11FED813D00DA632A /* RunnerControl.swift */; };
 		DE7B045E1FD70A4700E6DFAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B045D1FD70A4700E6DFAB /* AppDelegate.swift */; };
 		DE7B04601FD70A4700E6DFAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B045F1FD70A4700E6DFAB /* ViewController.swift */; };
 		DE7B04631FD70A4700E6DFAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE7B04611FD70A4700E6DFAB /* Main.storyboard */; };
@@ -53,6 +54,7 @@
 		DE4032961FE2F26500B1E617 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-BoldItalic.ttf"; path = "Open_Sans/OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		DE4032981FE2F27C00B1E617 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Italic.ttf"; path = "Open_Sans/OpenSans-Italic.ttf"; sourceTree = "<group>"; };
 		DE670AE71FD9C06C00D4454A /* RaceCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaceCreationViewController.swift; sourceTree = "<group>"; };
+		DE77D2A11FED813D00DA632A /* RunnerControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunnerControl.swift; sourceTree = "<group>"; };
 		DE7B045A1FD70A4700E6DFAB /* trackTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trackTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7B045D1FD70A4700E6DFAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE7B045F1FD70A4700E6DFAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE0D8A691FFD480800DA005E /* Custom Controls */ = {
+			isa = PBXGroup;
+			children = (
+				DE77D2A11FED813D00DA632A /* RunnerControl.swift */,
+			);
+			name = "Custom Controls";
+			sourceTree = "<group>";
+		};
+		DE77D29E1FED807500DA632A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DE3759C91FD86D32001C30E0 /* OpenSans-Regular.ttf */,
+				DE4032951FE2F25B00B1E617 /* OpenSans-Bold.ttf */,
+				DE4032961FE2F26500B1E617 /* OpenSans-BoldItalic.ttf */,
+				DE4032981FE2F27C00B1E617 /* OpenSans-Italic.ttf */,
+				DE3759C71FD86D1A001C30E0 /* FjallaOne-Regular.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		DE77D29F1FED808A00DA632A /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				DE07BDCA1FDB01060046E484 /* GlobalData.swift */,
+				DE07BDCE1FDB0E950046E484 /* Race.swift */,
+				DE07BDCC1FDB01640046E484 /* Runner.swift */,
+			);
+			name = "Data Models";
+			sourceTree = "<group>";
+		};
+		DE77D2A01FED809C00DA632A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DE7B045F1FD70A4700E6DFAB /* ViewController.swift */,
+				DE670AE71FD9C06C00D4454A /* RaceCreationViewController.swift */,
+				DE33D5431FE43D1E00730121 /* ArchiveTableViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 		DE7B04511FD70A4700E6DFAB = {
 			isa = PBXGroup;
 			children = (
@@ -116,18 +158,11 @@
 		DE7B045C1FD70A4700E6DFAB /* trackTimer */ = {
 			isa = PBXGroup;
 			children = (
-				DE3759C91FD86D32001C30E0 /* OpenSans-Regular.ttf */,
-				DE4032951FE2F25B00B1E617 /* OpenSans-Bold.ttf */,
-				DE4032961FE2F26500B1E617 /* OpenSans-BoldItalic.ttf */,
-				DE4032981FE2F27C00B1E617 /* OpenSans-Italic.ttf */,
-				DE3759C71FD86D1A001C30E0 /* FjallaOne-Regular.ttf */,
-				DE07BDCA1FDB01060046E484 /* GlobalData.swift */,
-				DE07BDCE1FDB0E950046E484 /* Race.swift */,
-				DE07BDCC1FDB01640046E484 /* Runner.swift */,
+				DE77D29E1FED807500DA632A /* Fonts */,
+				DE77D29F1FED808A00DA632A /* Data Models */,
+				DE0D8A691FFD480800DA005E /* Custom Controls */,
+				DE77D2A01FED809C00DA632A /* View Controllers */,
 				DE7B045D1FD70A4700E6DFAB /* AppDelegate.swift */,
-				DE7B045F1FD70A4700E6DFAB /* ViewController.swift */,
-				DE670AE71FD9C06C00D4454A /* RaceCreationViewController.swift */,
-				DE33D5431FE43D1E00730121 /* ArchiveTableViewController.swift */,
 				DE7B04611FD70A4700E6DFAB /* Main.storyboard */,
 				DE7B04661FD70A4700E6DFAB /* LaunchScreen.storyboard */,
 				DE7B04641FD70A4700E6DFAB /* Assets.xcassets */,
@@ -293,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE7B04601FD70A4700E6DFAB /* ViewController.swift in Sources */,
+				DE77D2A21FED813D00DA632A /* RunnerControl.swift in Sources */,
 				DE7B045E1FD70A4700E6DFAB /* AppDelegate.swift in Sources */,
 				DE07BDCD1FDB01640046E484 /* Runner.swift in Sources */,
 				DE07BDCB1FDB01060046E484 /* GlobalData.swift in Sources */,
