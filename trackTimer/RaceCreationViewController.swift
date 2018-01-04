@@ -21,9 +21,11 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
     @IBOutlet weak var pickerTest: UILabel! //delete this outlet later
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
+    @IBOutlet weak var runController: RunnerControl!
     
     //Race contstructed based on race info input by user
     var race: Race?
+    var runnerList = [Runner]()
 
     
     //MARK: Life Cycle
@@ -48,9 +50,10 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
         dateFormatter.dateStyle = .short
         dateLabel.text = dateFormatter.string(from: currentDate as Date)
         
-        //Set default picker value when view loads
+        //Set default picker value and RunnerControl Fields when view loads
         numberPicker.selectRow(0, inComponent: 0, animated: false)
         updateLabel()
+        runController.updateNumberOfTextfields(pickerData[0][numberPicker.selectedRow(inComponent:0)])
         
     }
 
@@ -76,6 +79,24 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
         return String(pickerData[component][row])
     }
     
+    //Indicates a row was selected
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    {
+        updateLabel()
+        
+        //Update runner initialization
+        runController.updateNumberOfTextfields(pickerData[component][row])
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+        return 200
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 50
+    }
+
+    
     //MARK: UITextFieldDelegate
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -88,14 +109,22 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
     //MARK: Actions
     
     //MARK: Private Methods
-    
-    //updates the label based on picker view selection
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
-    {
-        updateLabel()
+   
+    func createRace(_ date: String, _ location: String, _ distance: String, _ runnerList: Array<Runner>)  {
+        race = Race(date: date, location: location, distance: distance, runnerList: runnerList )
+        
     }
     
+    func createRunners() {
+        for run in runController.runFields{
+            let name = run.text
+            let runner = Runner(nameFirst: name!, nameLast: "")
+            runnerList.append(runner!)
+        }
+        
+    }
+    
+    //updates the label based on picker view selection
     func updateLabel(){
         
         let numRunners = pickerData[0][numberPicker.selectedRow(inComponent:0)]
@@ -103,13 +132,6 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
         pickerTest.text = String(numRunners)
     }
     
-    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
-        return 200
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        return 50
-    }
     
 
     
@@ -129,12 +151,16 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
             return
         }
         
+        //Setup Runners to pass
+        createRunners()
+        
+        //Setup Race to pass
         let date = dateLabel.text
         let location = locationField.text ?? "Practice"
         let distance = distanceField.text ?? ""
         let runnerList = [Runner(nameFirst: "Test", nameLast: "test")]
         
-        race = Race(date: date!, location: location, distance: distance, runnerList: runnerList as! Array<Runner>)
+        createRace(date!, location, distance, runnerList as! Array<Runner>)
     }
 
 }
