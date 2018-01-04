@@ -14,8 +14,15 @@ class Runner {
     
     var nameFirst: String
     var nameLast: String?
-    var runnerTimes = [String]() //Determine whether times will be stored as strings or other objects
-    //Are timers to be associated directly with runners?
+    var runnerTimes = [String]()
+    var lapTimer = Timer()
+    var placeHolder = 0
+    var count = 0
+    var runnerTimesDoubles = [Double]()
+    var runnerTimesDifference = [Double]()
+    var runnerTimesFormatted = [String]()
+    var currentTimeTotal = TimeInterval()
+    
     
     
     //MARK: Initialization
@@ -31,5 +38,81 @@ class Runner {
         self.nameFirst = nameFirst
         self.nameLast = nameLast
     }
-
+    
+    //MARK: Methods
+    
+    func startLapTimer(){
+        if !lapTimer.isValid{
+            let aSelector : Selector = #selector(Runner.updateLapTimer)
+            lapTimer = Timer.scheduledTimer(timeInterval: 0.10, target: self, selector: aSelector, userInfo: nil, repeats: true)
+        }
+    }
+    
+    func stopLapTimer(){
+        lapTimer.invalidate()
+        runnerTimesDoubles.append(currentTimeTotal)
+        convertDifference()
+        runnerTimesDifference.remove(at: 0)
+        convertFormat()
+    }
+    
+    func lapLapTimer(_ sender: Any){
+        lapTimer.invalidate()
+        updateLapTimer()
+        runnerTimesDoubles.append(currentTimeTotal)
+        convertDifference()
+    }
+    
+    @objc func updateLapTimer(){
+        let currentTime = NSDate.timeIntervalSinceReferenceDate
+        currentTimeTotal = currentTime
+        if placeHolder == 0{
+            let firstTime = currentTime
+            runnerTimesDoubles.append(firstTime)
+            placeHolder = 1
+        }
+    }
+    
+    func convertDifference(){
+        if count != 0{
+            runnerTimesDifference.append(runnerTimesDoubles[count] - runnerTimesDoubles[count - 1])
+            count += 1
+        }
+        if count == 0{
+            runnerTimesDifference.append(runnerTimesDoubles[count])
+            count += 1
+        }
+    }
+    
+    func convertFormat(){
+        for element in runnerTimesDifference{
+            var minutes = 0.0
+            var seconds = 0.0
+            var minutesInt = Int()
+            var secondsInt = Int()
+            if element <= 60{
+                minutesInt = 0
+                seconds = element
+                seconds = round(100 * seconds) / 100
+                secondsInt = Int(seconds)
+            }
+            else{
+                minutes = element / 60
+                minutesInt = Int(minutes)
+                let minutesDouble = Double(minutesInt)
+                seconds = (element - 60 * minutesDouble)
+                seconds = round(100 * seconds) / 100
+                secondsInt = Int(seconds)
+            }
+            if secondsInt < 10 {
+                let time = "\(minutesInt):0\(secondsInt)"
+                runnerTimesFormatted.append(time)
+            }
+            else{
+                let time = "\(minutesInt):\(secondsInt)"
+                runnerTimesFormatted.append(time)
+            }
+        }
+    }
+    
 }
