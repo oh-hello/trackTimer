@@ -110,16 +110,15 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
     
     //MARK: Private Methods
    
-    func createRace(_ date: String, _ location: String, _ distance: String, _ runnerList: Array<Runner>) -> Race {
+    func createRace(_ date: String, _ location: String, _ distance: String, _ runnerList: Array<Runner>)  {
         race = Race(date: date, location: location, distance: distance, runnerList: runnerList )
         
-        return race!
     }
     
     func createRunners() {
         for run in runController.runFields{
-            var name = run.text
-            var runner = Runner(nameFirst: name!, nameLast: "")
+            let name = run.text
+            let runner = Runner(nameFirst: name!, nameLast: "")
             runnerList.append(runner!)
         }
         

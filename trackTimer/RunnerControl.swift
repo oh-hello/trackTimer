@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RunnerControl: UIStackView {
+class RunnerControl: UIStackView, UITextFieldDelegate{
 
     //MARK: Initialization
     
@@ -39,6 +39,7 @@ class RunnerControl: UIStackView {
         for _ in 0..<number {
             //create textfields
             let nameFirst = UITextField()
+            nameFirst.delegate = self
             nameFirst.backgroundColor = UIColor.lightGray
             nameFirst.placeholder = "First Name"
             nameFirst.borderStyle = UITextBorderStyle.bezel
