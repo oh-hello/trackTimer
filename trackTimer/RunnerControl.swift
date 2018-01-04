@@ -46,8 +46,6 @@ class RunnerControl: UIStackView, UITextFieldDelegate{
             
             //add constraints
             nameFirst.translatesAutoresizingMaskIntoConstraints = true
-            nameFirst.heightAnchor.constraint(equalToConstant: 50).isActive = true
-            nameFirst.widthAnchor.constraint(equalToConstant: 250).isActive = true
         
             //add field to array 
             runFields.append(nameFirst)
