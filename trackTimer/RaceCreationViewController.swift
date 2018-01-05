@@ -117,9 +117,9 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
     
     func createRunners() {
         for run in runController.runFields{
-            let name = run.text
-            let runner = Runner(nameFirst: name!, nameLast: "")
-            runnerList.append(runner!)
+            //let name = run.text
+            //let runner = Runner(nameFirst: name!, nameLast: "")
+            //runnerList.append(runner!)
         }
         
     }

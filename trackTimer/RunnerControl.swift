@@ -25,18 +25,21 @@ class RunnerControl: UIStackView, UITextFieldDelegate{
     }
     
     //MARK: Properties
-    var runFields = [UITextField]()
+    var runFields = [UIStackView]()
     
     //MARK: Private Methods
     private func setupTextFields(_ number: Int) {
         // clear any existing text fields
-        for text in runFields {
-            removeArrangedSubview(text)
-            text.removeFromSuperview()
+        for view in runFields {
+            removeArrangedSubview(view)
+            view.removeFromSuperview()
         }
         runFields.removeAll()
        
         for _ in 0..<number {
+            //create sub array
+            var nameArray = [UITextField]()
+            
             //create textfields
             let nameFirst = UITextField()
             nameFirst.delegate = self
@@ -44,14 +47,36 @@ class RunnerControl: UIStackView, UITextFieldDelegate{
             nameFirst.placeholder = "First Name"
             nameFirst.borderStyle = UITextBorderStyle.bezel
             
+            let nameLast = UITextField()
+            nameLast.delegate = self
+            nameLast.backgroundColor = UIColor.lightGray
+            nameLast.placeholder = "Last Name"
+            nameLast.borderStyle = UITextBorderStyle.bezel
+            
             //add constraints
-            nameFirst.translatesAutoresizingMaskIntoConstraints = true
+            nameFirst.translatesAutoresizingMaskIntoConstraints = false
+            nameLast.translatesAutoresizingMaskIntoConstraints = false
         
-            //add field to array 
-            runFields.append(nameFirst)
-        
-            //add field to the stack
-            addArrangedSubview(nameFirst)
+            //add to array
+            nameArray.append(nameFirst)
+            nameArray.append(nameLast)
+            
+            //create horizontal subview
+            let nameStack = UIStackView(arrangedSubviews: nameArray)
+            nameStack.axis = .horizontal
+            nameStack.distribution = .fillEqually
+            nameStack.alignment = .fill
+            nameStack.spacing = 5
+            
+            //add stack to runFields
+            runFields.append(nameStack)
+            
+            //add fields to the stack
+            nameStack.addArrangedSubview(nameFirst)
+            nameStack.addArrangedSubview(nameLast)
+            
+            //add stack to stack
+            addArrangedSubview(nameStack)
         }
     }
     
