@@ -46,12 +46,15 @@ class RunnerControl: UIStackView, UITextFieldDelegate{
             nameFirst.backgroundColor = UIColor.lightGray
             nameFirst.placeholder = "First Name"
             nameFirst.borderStyle = UITextBorderStyle.bezel
+            nameFirst.font = UIFont(name: "OpenSans-Regular", size: 20)
             
             let nameLast = UITextField()
             nameLast.delegate = self
             nameLast.backgroundColor = UIColor.lightGray
             nameLast.placeholder = "Last Name"
             nameLast.borderStyle = UITextBorderStyle.bezel
+            nameLast.font = UIFont(name: "OpenSans-Regular", size: 20)
+
             
             //add constraints
             nameFirst.translatesAutoresizingMaskIntoConstraints = false
