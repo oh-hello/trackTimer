@@ -141,6 +141,11 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
         dismiss(animated: false, completion: nil)
     }
     
+    @IBAction func saveToTimer(_ sender: Any) {
+        performSegue(withIdentifier: "toTimer", sender: Any?.self)
+    }
+    
+    
     //configure view controller before it's presented
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for:segue, sender: sender)
