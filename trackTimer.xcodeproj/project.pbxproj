@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20413467200530D0003BD623 /* MasterTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20413466200530D0003BD623 /* MasterTimerViewController.swift */; };
 		DE07BDCB1FDB01060046E484 /* GlobalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE07BDCA1FDB01060046E484 /* GlobalData.swift */; };
 		DE07BDCD1FDB01640046E484 /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE07BDCC1FDB01640046E484 /* Runner.swift */; };
 		DE07BDCF1FDB0E950046E484 /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE07BDCE1FDB0E950046E484 /* Race.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20413466200530D0003BD623 /* MasterTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterTimerViewController.swift; sourceTree = "<group>"; };
 		DE07BDCA1FDB01060046E484 /* GlobalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalData.swift; sourceTree = "<group>"; };
 		DE07BDCC1FDB01640046E484 /* Runner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Runner.swift; sourceTree = "<group>"; };
 		DE07BDCE1FDB0E950046E484 /* Race.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Race.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		DE7B04511FD70A4700E6DFAB = {
 			isa = PBXGroup;
 			children = (
+				20413466200530D0003BD623 /* MasterTimerViewController.swift */,
 				DE7B045C1FD70A4700E6DFAB /* trackTimer */,
 				DE7B04711FD70A4700E6DFAB /* trackTimerTests */,
 				DE7B047C1FD70A4700E6DFAB /* trackTimerUITests */,
@@ -335,6 +338,7 @@
 				DE33D5441FE43D1E00730121 /* ArchiveTableViewController.swift in Sources */,
 				DE07BDCF1FDB0E950046E484 /* Race.swift in Sources */,
 				DE670AE81FD9C06C00D4454A /* RaceCreationViewController.swift in Sources */,
+				20413467200530D0003BD623 /* MasterTimerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
