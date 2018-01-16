@@ -26,6 +26,7 @@ class RunnerControl: UIStackView, UITextFieldDelegate{
     
     //MARK: Properties
     var runFields = [UIStackView]()
+    var allNames = [[UITextField]]()
     
     //MARK: Private Methods
     private func setupTextFields(_ number: Int) {
@@ -33,8 +34,10 @@ class RunnerControl: UIStackView, UITextFieldDelegate{
         for view in runFields {
             removeArrangedSubview(view)
             view.removeFromSuperview()
+            
         }
         runFields.removeAll()
+        allNames = []
        
         for _ in 0..<number {
             //create sub array
@@ -63,7 +66,7 @@ class RunnerControl: UIStackView, UITextFieldDelegate{
             //add to array
             nameArray.append(nameFirst)
             nameArray.append(nameLast)
-            
+            allNames.append(nameArray)
             //create horizontal subview
             let nameStack = UIStackView(arrangedSubviews: nameArray)
             nameStack.axis = .horizontal
