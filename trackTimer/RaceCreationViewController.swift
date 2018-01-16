@@ -18,7 +18,6 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
     @IBOutlet weak var locationField: UITextField!
     @IBOutlet weak var distanceField: UITextField!
     @IBOutlet weak var numberPicker: UIPickerView!
-    @IBOutlet weak var pickerTest: UILabel! //delete this outlet later
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     @IBOutlet weak var runController: RunnerControl!
@@ -52,7 +51,6 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
         
         //Set default picker value and RunnerControl Fields when view loads
         numberPicker.selectRow(0, inComponent: 0, animated: false)
-        updateLabel()
         runController.updateNumberOfTextfields(pickerData[0][numberPicker.selectedRow(inComponent:0)])
         
     }
@@ -82,8 +80,6 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
     //Indicates a row was selected
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
-        updateLabel()
-        
         //Update runner initialization
         runController.updateNumberOfTextfields(pickerData[component][row])
     }
@@ -123,17 +119,6 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
         }
         
     }
-    
-    //updates the label based on picker view selection
-    func updateLabel(){
-        
-        let numRunners = pickerData[0][numberPicker.selectedRow(inComponent:0)]
-        
-        pickerTest.text = String(numRunners)
-    }
-    
-    
-
     
     // MARK: - Navigation
     
