@@ -23,9 +23,11 @@ class MasterTimerViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
-        if race != nil {
-            print("success")
-        }
+        
+        //set up heading fields
+        dateLabel.text = race?.date
+        locationLabel.text = race?.location
+        distanceLabel.text = race?.distance
     }
     
     override func didReceiveMemoryWarning() {

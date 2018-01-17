@@ -113,6 +113,7 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
    
     func createRace(_ date: String, _ location: String, _ distance: String, _ runnerList: Array<Runner>)  {
         race = Race(date: date, location: location, distance: distance, runnerList: runnerList )
+        print("race created")
         
     }
     
@@ -146,7 +147,7 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
     }
     
     @IBAction func saveToTimer(_ sender: Any) {
-        
+        print("save button pressed")
     }
     
     

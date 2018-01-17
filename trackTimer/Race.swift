@@ -56,6 +56,8 @@ class Race: NSObject, NSCoding {
         self.location = location
         self.distance = distance
         self.runnerList = runnerList
+        
+        print("init successful")
     }
     
     //MARK: NSCoding
