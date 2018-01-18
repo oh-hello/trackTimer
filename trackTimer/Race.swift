@@ -58,6 +58,8 @@ class Race: NSObject, NSCoding {
         self.runnerList = runnerList
     }
     
+    
+    
     //MARK: NSCoding
     func encode(with aCoder: NSCoder) {
         aCoder.encode(date, forKey: PropertyKey.date)
@@ -82,6 +84,7 @@ class Race: NSObject, NSCoding {
         let location = aDecoder.decodeObject(forKey: PropertyKey.location) as? String
         
         let distance = aDecoder.decodeObject(forKey: PropertyKey.distance) as? String
+    
         
         // Must call designated initializer
         self.init(date: date, location: location!, distance: distance, runnerList: runnerList)

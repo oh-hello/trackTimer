@@ -107,8 +107,8 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
     //MARK: Private Methods
    
     func createRace(_ date: String, _ location: String, _ distance: String, _ runnerList: Array<Runner>)  {
-        race = Race(date: date, location: location, distance: distance, runnerList: runnerList )
-        
+        race = Race(date: date, location: location, distance: distance, runnerList: runnerList)
+        print("race created")
     }
     
     func createRunners() {
