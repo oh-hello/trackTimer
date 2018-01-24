@@ -18,7 +18,9 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
     @IBOutlet weak var locationField: UITextField!
     @IBOutlet weak var distanceField: UITextField!
     @IBOutlet weak var numberPicker: UIPickerView!
-    @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var pickerTest: UILabel! //delete this outlet later
+    @IBOutlet weak var saveButton: UIButton!
+
     
     @IBOutlet weak var runController: RunnerControl!
     

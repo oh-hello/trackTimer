@@ -163,20 +163,10 @@
                                 <rect key="frame" x="54.507692307693105" y="228" width="912.99999999999977" height="428"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEv-RQ-5F4">
-                                <rect key="frame" x="889" y="28" width="115" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="FjallaOne-Regular" family="Fjalla One" pointSize="25"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="saveToTimer:" destination="GX4-hU-Xbz" eventType="touchUpInside" id="UoN-Vi-nwG"/>
-                                    <segue destination="ZfU-vv-HLo" kind="show" identifier="toTimer" animates="NO" id="b7p-0x-geH"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddg-NY-4Rc">
-                                <rect key="frame" x="20" y="28" width="114" height="39"/>
+                                <rect key="frame" x="20" y="20" width="69" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="FjallaOne-Regular" family="Fjalla One" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="FjallaOne-Regular" family="Fjalla One" pointSize="17"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
                                     <action selector="cancel:" destination="GX4-hU-Xbz" eventType="touchUpInside" id="39c-my-vEq"/>
@@ -191,6 +181,16 @@
                                 <connections>
                                     <action selector="saveToTimer:" destination="GX4-hU-Xbz" eventType="touchUpInside" id="UoN-Vi-nwG"/>
                                     <segue destination="ZfU-vv-HLo" kind="show" identifier="toTimer" animates="NO" id="b7p-0x-geH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddg-NY-4Rc">
+                                <rect key="frame" x="20" y="28" width="114" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="FjallaOne-Regular" family="Fjalla One" pointSize="25"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancel:" destination="GX4-hU-Xbz" eventType="touchUpInside" id="39c-my-vEq"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="toHome" animates="NO" id="BvT-3I-qNb"/>
                                 </connections>
                             </button>
                         </subviews>
