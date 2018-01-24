@@ -13,7 +13,27 @@ class MasterTimerViewController: UIViewController {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     
+    var race: Race?
     
+    //MARK: Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(false)
+        if race != nil {
+            print("success")
+        }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK: Timer
     
     //Timer Variables
     @IBOutlet weak var masterTimerClock: UILabel!
@@ -28,8 +48,8 @@ class MasterTimerViewController: UIViewController {
             startTime = NSDate.timeIntervalSinceReferenceDate
         }
     }
+
     
-    //Timer Things
     func runTimer(){
         let currentTime = NSDate.timeIntervalSinceReferenceDate
         var elapsedTime: TimeInterval = currentTime - startTime
@@ -44,14 +64,8 @@ class MasterTimerViewController: UIViewController {
         let displayTimeLabel = "\(strMinutes):\(strSeconds):\(strFraction)"
         masterTimerClock.text = displayTimeLabel
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
+    
     
     
     // MARK: - Navigation

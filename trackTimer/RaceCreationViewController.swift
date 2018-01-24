@@ -33,7 +33,7 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
         super.viewDidLoad()
         numberPicker.delegate = self
         numberPicker.dataSource = self
-        // Handle the text field’s user input through delegate callbacks.
+        // Handle the text field’s user input through delegate callbacks
         locationField.delegate = self
         distanceField.delegate = self
 
@@ -111,12 +111,15 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
         print("race created")
     }
     
-    func createRunners() {
-        for run in runController.runFields{
-            //let name = run.text
-            //let runner = Runner(nameFirst: name!, nameLast: "")
-            //runnerList.append(runner!)
+    func createRunners() -> Array<Runner> {
+        var runnerArray = [Runner]()
+        for run in runController.allNames{
+            let nameFirst = run[0].text
+            let nameLast = run[1].text
+            let runner = Runner(nameFirst: nameFirst ?? "", nameLast: nameLast ?? "")
+            runnerArray.append(runner!)
         }
+        return runnerArray
         
     }
     
@@ -127,7 +130,7 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
     }
     
     @IBAction func saveToTimer(_ sender: Any) {
-        performSegue(withIdentifier: "toTimer", sender: Any?.self)
+        
     }
     
     
@@ -136,21 +139,29 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
         super.prepare(for:segue, sender: sender)
         
         // Configure the destination view controller only when the save button is pressed.
-        guard let button = sender as? UIBarButtonItem, button === saveButton else {
+        guard let button = sender as? UIButton, button === saveButton else {
             os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
             return
         }
         
+        
+        
         //Setup Runners to pass
-        createRunners()
+        runnerList = createRunners()
         
         //Setup Race to pass
         let date = dateLabel.text
         let location = locationField.text ?? "Practice"
         let distance = distanceField.text ?? ""
-        let runnerList = [Runner(nameFirst: "Test", nameLast: "test")]
+
+        if segue.identifier == "toTimer" {
+            let destination = segue.destination as? MasterTimerViewController
+            createRace(date!, location, distance, runnerList)
+            destination!.race = self.race
+        }
         
-        createRace(date!, location, distance, runnerList as! Array<Runner>)
+        
+        
     }
 
 }
