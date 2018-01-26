@@ -140,13 +140,6 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for:segue, sender: sender)
         
-        // Configure the destination view controller only when the save button is pressed.
-        guard let button = sender as? UIButton, button === saveButton else {
-            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
-            return
-        }
-        
-        
         
         //Setup Runners to pass
         runnerList = createRunners()

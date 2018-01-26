@@ -18,7 +18,7 @@ class LapButton: UIButton {
         runner = run
         super.init(frame: .zero)
         
-        backgroundColor = UIColor(hue: 102, saturation: 22, brightness: 84, alpha: 1)
+        backgroundColor = UIColor(hue: 0.102, saturation: 0.22, brightness: 0.84, alpha: 1)
         layer.cornerRadius = 20
         setTitle("Lap", for: UIControlState.normal)
         titleLabel?.font = UIFont(name: "OpenSans-Regular", size: 15)

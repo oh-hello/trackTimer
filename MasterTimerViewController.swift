@@ -80,15 +80,13 @@ class MasterTimerViewController: UIViewController {
         }
         
         for x in 0..<race!.runnerList.count {
-            //create sub array
-            var subArray = [UIView]()
             
             //access runner
             let currentRunner = race?.runnerList[x]
             
             //create Name Label
             let runnerName = UILabel()
-            runnerName.text = "\(String(describing: currentRunner?.nameFirst)) \(String(describing: currentRunner?.nameLast!))"
+            runnerName.text = "\(currentRunner?.nameFirst ?? "Runner") \(currentRunner?.nameLast ?? "")"
             
             runnerName.font = UIFont(name: "OpenSans-Regular", size: 20)
             
@@ -96,12 +94,10 @@ class MasterTimerViewController: UIViewController {
             //create Buttons
             let lap = LapButton(run: currentRunner!)
             
-            //add to array
-            subArray.append(runnerName)
-            subArray.append(lap)
             
             //add to stack
-            
+            runnerStack.addArrangedSubview(runnerName)
+            runnerStack.addArrangedSubview(lap)
             
             
             
