@@ -143,7 +143,7 @@
                                 <nil key="textColor"/>
                                 <color key="highlightedColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Practice" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aFO-gp-2b2">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Practice" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aFO-gp-2b2">
                                 <rect key="frame" x="389" y="73" width="286" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -287,6 +287,7 @@
                         <outlet property="distanceLabel" destination="pum-Xz-yok" id="rQF-LL-J8p"/>
                         <outlet property="locationLabel" destination="MXJ-sz-TI7" id="NlG-Fx-gTI"/>
                         <outlet property="masterTimerClock" destination="PuZ-Gi-rDe" id="siC-li-abN"/>
+                        <outlet property="runnerStack" destination="QeR-Lm-5cR" id="g47-e3-OmI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="94Z-8X-3oJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -113,7 +113,6 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
    
     func createRace(_ date: String, _ location: String, _ distance: String, _ runnerList: Array<Runner>)  {
         race = Race(date: date, location: location, distance: distance, runnerList: runnerList )
-        print("race created")
         
     }
     
@@ -168,12 +167,14 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
         
         //Setup Race to pass
         let date = dateLabel.text
-        let location = locationField.text ?? "Practice"
-        let distance = distanceField.text ?? ""
-
+        let location = locationField.text
+        let distance = distanceField.text
+        
+        
         if segue.identifier == "toTimer" {
             let destination = segue.destination as? MasterTimerViewController
-            createRace(date!, location, distance, runnerList)
+            createRace(date!, location!, distance!, runnerList)
+            
             destination!.race = self.race
         }
         

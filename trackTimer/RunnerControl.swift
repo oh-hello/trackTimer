@@ -67,6 +67,7 @@ class RunnerControl: UIStackView, UITextFieldDelegate{
             nameArray.append(nameFirst)
             nameArray.append(nameLast)
             allNames.append(nameArray)
+            
             //create horizontal subview
             let nameStack = UIStackView(arrangedSubviews: nameArray)
             nameStack.axis = .horizontal
@@ -89,6 +90,7 @@ class RunnerControl: UIStackView, UITextFieldDelegate{
     //MARK: Public Methods
     
     func updateNumberOfTextfields(_ number: Int){
+        print(number)
         self.setupTextFields(number)
     }
 

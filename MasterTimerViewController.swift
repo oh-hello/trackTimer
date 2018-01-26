@@ -12,6 +12,7 @@ class MasterTimerViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var runnerStack: UIStackView!
     
     var race: Race?
     
@@ -28,6 +29,9 @@ class MasterTimerViewController: UIViewController {
         dateLabel.text = race?.date
         locationLabel.text = race?.location
         distanceLabel.text = race?.distance
+        print("In theory things have been set")
+        
+        setupRunnerStack()
     }
     
     override func didReceiveMemoryWarning() {
@@ -67,7 +71,42 @@ class MasterTimerViewController: UIViewController {
         masterTimerClock.text = displayTimeLabel
     }
     
+    //MARK: Private Methods
     
+    func setupRunnerStack() {
+        
+        for view in runnerStack.arrangedSubviews{
+            runnerStack.removeArrangedSubview(view)
+        }
+        
+        for x in 0..<race!.runnerList.count {
+            //create sub array
+            var subArray = [UIView]()
+            
+            //access runner
+            let currentRunner = race?.runnerList[x]
+            
+            //create Name Label
+            let runnerName = UILabel()
+            runnerName.text = "\(String(describing: currentRunner?.nameFirst)) \(String(describing: currentRunner?.nameLast!))"
+            
+            runnerName.font = UIFont(name: "OpenSans-Regular", size: 20)
+            
+            
+            //create Buttons
+            let lap = LapButton(run: currentRunner!)
+            
+            //add to array
+            subArray.append(runnerName)
+            subArray.append(lap)
+            
+            //add to stack
+            
+            
+            
+            
+        }
+    }
     
     
     // MARK: - Navigation

@@ -23,8 +23,9 @@ class Runner {
     var runnerTimesFormatted = [String]()
     var currentTimeTotal = TimeInterval()
     
-    
-    
+    //buttons for start and stop
+    let lapButton = UIButton()
+    let stopButton = UIButton()
     //MARK: Initialization
     
     init?(nameFirst: String, nameLast: String?) {
