@@ -53,7 +53,6 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
         
         //Set default picker value and RunnerControl Fields when view loads
         numberPicker.selectRow(0, inComponent: 0, animated: false)
-        updateLabel()
         runController.updateNumberOfTextfields(pickerData[0][numberPicker.selectedRow(inComponent:0)])
         
     }
@@ -83,8 +82,6 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
     //Indicates a row was selected
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
-        updateLabel()
-        
         //Update runner initialization
         runController.updateNumberOfTextfields(pickerData[component][row])
     }
@@ -112,8 +109,8 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
     //MARK: Private Methods
    
     func createRace(_ date: String, _ location: String, _ distance: String, _ runnerList: Array<Runner>)  {
-        race = Race(date: date, location: location, distance: distance, runnerList: runnerList )
-        
+        race = Race(date: date, location: location, distance: distance, runnerList: runnerList)
+        print("race created")
     }
     
     func createRunners() -> Array<Runner> {
@@ -127,17 +124,6 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
         return runnerArray
         
     }
-    
-    //updates the label based on picker view selection
-    func updateLabel(){
-        
-        let numRunners = pickerData[0][numberPicker.selectedRow(inComponent:0)]
-        
-        pickerTest.text = String(numRunners)
-    }
-    
-    
-
     
     // MARK: - Navigation
     
@@ -177,8 +163,6 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
             
             destination!.race = self.race
         }
-        
-        
         
     }
 
