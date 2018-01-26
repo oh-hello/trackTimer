@@ -162,8 +162,6 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
             destination!.race = self.race
         }
         
-        
-        
     }
 
 }
