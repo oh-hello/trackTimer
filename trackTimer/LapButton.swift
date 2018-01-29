@@ -18,10 +18,12 @@ class LapButton: UIButton {
         runner = run
         super.init(frame: .zero)
         
-        backgroundColor = UIColor(hue: 0.102, saturation: 0.22, brightness: 0.84, alpha: 1)
+        backgroundColor = UIColor(red: 182/255, green: 215/255, blue: 168/255, alpha: 1.0)
         layer.cornerRadius = 20
         setTitle("Lap", for: UIControlState.normal)
-        titleLabel?.font = UIFont(name: "OpenSans-Regular", size: 15)
+        titleLabel?.font = UIFont(name: "FjallaOne-Regular", size: 30)
+        setTitleColor(UIColor.black, for: UIControlState.normal)
+        setTitleColor(UIColor.white, for: UIControlState.focused)
         layer.borderWidth = 2
         frame.size = CGSize(width: 60, height: 50)
     }
