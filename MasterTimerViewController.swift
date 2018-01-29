@@ -20,6 +20,8 @@ class MasterTimerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -80,7 +82,7 @@ class MasterTimerViewController: UIViewController {
         }
         
         for x in 0..<race!.runnerList.count {
-            
+
             //access runner
             let currentRunner = race?.runnerList[x]
             
@@ -95,9 +97,19 @@ class MasterTimerViewController: UIViewController {
             let lap = LapButton(run: currentRunner!)
             
             
+            //Create horizontal stack
+            let subArray = [UIView]()
+            let horizontalStack = UIStackView(arrangedSubviews: subArray)
+            horizontalStack.axis = .horizontal
+            horizontalStack.distribution = .fillEqually
+            
             //add to stack
-            runnerStack.addArrangedSubview(runnerName)
-            runnerStack.addArrangedSubview(lap)
+            horizontalStack.addArrangedSubview(runnerName)
+            horizontalStack.addArrangedSubview(lap)
+            //horizontalStack.addArrangedSubview(stop)
+            
+            //add to vertical stack
+            runnerStack.addArrangedSubview(horizontalStack)
             
             
             
