@@ -136,6 +136,7 @@ class MasterTimerViewController: UIViewController {
         print("Lap Button Pressed from MasterTimer")
     }
     func stopButtonPressed(sender: StopButton){
+        sender.callToStop()
         print("Stop Button Pressed")
     }
     
