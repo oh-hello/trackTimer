@@ -106,10 +106,11 @@ class MasterTimerViewController: UIViewController {
             
             //create Buttons
             let lap = LapButton(run: currentRunner!)
+            let stop = StopButton(run: currentRunner!)
             
             //add lisener
             lap.addTarget(self, action: #selector(lapButtonPressed),for: .touchUpInside)
-            
+            stop.addTarget(self, action: #selector(stopButtonPressed), for: .touchUpInside)
             
             //Create horizontal stack
             let subArray = [UIView]()
@@ -132,7 +133,10 @@ class MasterTimerViewController: UIViewController {
     //MARK: Actions
     func lapButtonPressed(sender: LapButton){
         sender.callToLap()
-        print("lap Button Pressed from MasterTimer")
+        print("Lap Button Pressed from MasterTimer")
+    }
+    func stopButtonPressed(sender: StopButton){
+        print("Stop Button Pressed")
     }
     
     
