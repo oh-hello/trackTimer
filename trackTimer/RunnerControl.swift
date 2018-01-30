@@ -50,6 +50,7 @@ class RunnerControl: UIStackView, UITextFieldDelegate{
             nameFirst.placeholder = "First Name"
             nameFirst.borderStyle = UITextBorderStyle.bezel
             nameFirst.font = UIFont(name: "OpenSans-Regular", size: 20)
+            nameFirst.autocorrectionType = .no
             
             let nameLast = UITextField()
             nameLast.delegate = self
@@ -57,6 +58,7 @@ class RunnerControl: UIStackView, UITextFieldDelegate{
             nameLast.placeholder = "Last Name"
             nameLast.borderStyle = UITextBorderStyle.bezel
             nameLast.font = UIFont(name: "OpenSans-Regular", size: 20)
+            nameLast.autocorrectionType = .no
 
             
             //add constraints
