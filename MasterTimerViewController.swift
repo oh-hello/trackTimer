@@ -14,6 +14,7 @@ class MasterTimerViewController: UIViewController {
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var runnerStack: UIStackView!
     
+    @IBOutlet weak var startAll: UIButton!
     var race: Race?
     
     //MARK: Life Cycle
@@ -30,7 +31,10 @@ class MasterTimerViewController: UIViewController {
         dateLabel.text = race?.date
         locationLabel.text = race?.location
         distanceLabel.text = race?.distance
-        print("In theory things have been set")
+        
+        //format start all button
+        startAll.layer.borderWidth = 2
+        startAll.layer.cornerRadius = 10
         
         setupRunnerStack()
     }
@@ -112,11 +116,12 @@ class MasterTimerViewController: UIViewController {
             let horizontalStack = UIStackView(arrangedSubviews: subArray)
             horizontalStack.axis = .horizontal
             horizontalStack.distribution = .fillEqually
+            horizontalStack.spacing = 10
             
             //add to stack
             horizontalStack.addArrangedSubview(runnerName)
             horizontalStack.addArrangedSubview(lap)
-            //horizontalStack.addArrangedSubview(stop)
+            horizontalStack.addArrangedSubview(stop)
             
             //add to vertical stack
             runnerStack.addArrangedSubview(horizontalStack)
