@@ -57,7 +57,7 @@ class Runner {
         convertFormat()
     }
     
-    func lapLapTimer(_ sender: Any){
+    func lapLapTimer(){
         lapTimer.invalidate()
         updateLapTimer()
         runnerTimesDoubles.append(currentTimeTotal)

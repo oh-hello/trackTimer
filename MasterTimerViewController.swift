@@ -21,7 +21,6 @@ class MasterTimerViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -55,9 +54,9 @@ class MasterTimerViewController: UIViewController {
             timer = Timer.scheduledTimer(timeInterval: 0.10, target: self, selector: aSelector, userInfo:nil, repeats: true)
             startTime = NSDate.timeIntervalSinceReferenceDate
         }
+        startLapTime()
     }
 
-    
     func runTimer(){
         let currentTime = NSDate.timeIntervalSinceReferenceDate
         var elapsedTime: TimeInterval = currentTime - startTime
@@ -72,6 +71,14 @@ class MasterTimerViewController: UIViewController {
         let displayTimeLabel = "\(strMinutes):\(strSeconds):\(strFraction)"
         masterTimerClock.text = displayTimeLabel
     }
+    
+    func startLapTime(){
+        for currentRunner in race!.runnerList{
+            currentRunner.startLapTimer()
+            print("lap timer started")
+        }
+    }
+
     
     //MARK: Private Methods
     
@@ -96,6 +103,9 @@ class MasterTimerViewController: UIViewController {
             //create Buttons
             let lap = LapButton(run: currentRunner!)
             
+            //add lisener
+            lap.addTarget(self, action: #selector(lapButtonPressed),for: .touchUpInside)
+            
             
             //Create horizontal stack
             let subArray = [UIView]()
@@ -111,9 +121,13 @@ class MasterTimerViewController: UIViewController {
             //add to vertical stack
             runnerStack.addArrangedSubview(horizontalStack)
             
-            
-            
         }
+    }
+    
+    //MARK: Actions
+    func lapButtonPressed(sender: LapButton){
+        sender.callToLap()
+        print("lap Button Pressed from MasterTimer")
     }
     
     

@@ -29,4 +29,10 @@ class LapButton: UIButton {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    //MARK: Private Functions
+    func callToLap(){
+        runner.lapLapTimer()
+        print("lap button pressed from LapButton")
+    }
 }
