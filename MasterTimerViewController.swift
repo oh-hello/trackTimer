@@ -108,7 +108,7 @@ class MasterTimerViewController: UIViewController {
             let lap = LapButton(run: currentRunner!)
             let stop = StopButton(run: currentRunner!)
             
-            //add lisener
+            //add event listeners
             lap.addTarget(self, action: #selector(lapButtonPressed),for: .touchUpInside)
             stop.addTarget(self, action: #selector(stopButtonPressed), for: .touchUpInside)
             
@@ -131,10 +131,12 @@ class MasterTimerViewController: UIViewController {
     }
     
     //MARK: Actions
+    
     func lapButtonPressed(sender: LapButton){
         sender.callToLap()
         print("Lap Button Pressed from MasterTimer")
     }
+    
     func stopButtonPressed(sender: StopButton){
         sender.callToStop()
         print("Stop Button Pressed")
