@@ -20,8 +20,7 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
     @IBOutlet weak var numberPicker: UIPickerView!
     @IBOutlet weak var pickerTest: UILabel! //delete this outlet later
     @IBOutlet weak var saveButton: UIButton!
-
-    
+    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var runController: RunnerControl!
     
     //Race contstructed based on race info input by user
@@ -140,6 +139,11 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for:segue, sender: sender)
         
+        switch segue.destination {
+        case is ViewController:
+            //perform segue to landing screen
+            cancel(sender as Any)
+        default:
         
         //Setup Runners to pass
         runnerList = createRunners()
@@ -149,13 +153,12 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
         let location = locationField.text
         let distance = distanceField.text
         
-        
-        if segue.identifier == "toTimer" {
-            let destination = segue.destination as? MasterTimerViewController
-            createRace(date!, location!, distance!, runnerList)
-            
-            destination!.race = self.race
+        //Set Destination and perform segue to Master Timer
+        let destination = segue.destination as? MasterTimerViewController
+        createRace(date!, location!, distance!, runnerList)
+        destination!.race = self.race
         }
+    
         
     }
 
