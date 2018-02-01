@@ -36,9 +36,6 @@ class StopButton: UIButton {
     func callToStop(){
         runner.stopLapTimer()
         print("timer stopped")
-        let runnerCurrent = runner.runnerTimesFormatted
-        let joined = runnerCurrent.joined(separator: ", ")
-        print(joined)
     }
 
 }

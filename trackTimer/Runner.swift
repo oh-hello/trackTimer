@@ -22,6 +22,7 @@ class Runner {
     var runnerTimesDifference = [Double]()
     var runnerTimesFormatted = [String]()
     var currentTimeTotal = TimeInterval()
+    var firstTime = TimeInterval()
     
     //buttons for start and stop
     let lapButton = UIButton()
@@ -68,7 +69,7 @@ class Runner {
         let currentTime = NSDate.timeIntervalSinceReferenceDate
         currentTimeTotal = currentTime
         if placeHolder == 0{
-            let firstTime = currentTime
+            firstTime = currentTime
             runnerTimesDoubles.append(firstTime)
             placeHolder = 1
         }
