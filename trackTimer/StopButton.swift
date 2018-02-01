@@ -9,13 +9,15 @@
 import UIKit
 
 class StopButton: UIButton {
-
+    
     //MARK: Properties
     let runner:Runner
+    let lap:LapButton
     
     //MARK: Initialization
-    required init(run: Runner) {
+    required init(run: Runner, lap: LapButton) {
         runner = run
+        self.lap = lap
         super.init(frame: .zero)
         
         backgroundColor = UIColor(red: 230/255, green: 184/255, blue: 175/255, alpha: 1.0)
@@ -23,13 +25,20 @@ class StopButton: UIButton {
         setTitle("Stop", for: UIControlState.normal)
         titleLabel?.font = UIFont(name: "FjallaOne-Regular", size: 30)
         setTitleColor(UIColor.black, for: UIControlState.normal)
-        setTitleColor(UIColor.white, for: UIControlState.focused)
         layer.borderWidth = 2
         frame.size = CGSize(width: 60, height: 50)
+        
+        //set disabled property styles
+        setTitleColor(UIColor.black, for: UIControlState.disabled)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
+    func disableLapButton() {
+        lap.isEnabled = false
+        lap.backgroundColor = UIColor.lightGray
+    }
+    
 }
