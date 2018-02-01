@@ -23,6 +23,7 @@ class Runner {
     var runnerTimesFormatted = [String]()
     var currentTimeTotal = TimeInterval()
     var firstTime = TimeInterval()
+    var finalTime = 0.0
     
     //buttons for start and stop
     let lapButton = UIButton()
@@ -51,11 +52,10 @@ class Runner {
     }
     
     func stopLapTimer(){
-        lapTimer.invalidate()
-        runnerTimesDoubles.append(currentTimeTotal)
+        //lapTimer.invalidate()
+        //runnerTimesDoubles.append(currentTimeTotal)
         convertDifference()
         runnerTimesDifference.remove(at: 0)
-        convertFormat()
     }
     
     func lapLapTimer(){
@@ -115,6 +115,14 @@ class Runner {
                 runnerTimesFormatted.append(time)
             }
         }
+    }
+    
+    func getTotalTime(){
+        for x in runnerTimesDifference{
+            finalTime += x
+        }
+        runnerTimesDifference.append(finalTime)
+        convertFormat()
     }
     
 }

@@ -34,7 +34,9 @@ class StopButton: UIButton {
     
     //MARK: Private Functions
     func callToStop(){
+        runner.lapLapTimer()
         runner.stopLapTimer()
+        runner.getTotalTime()
         print("timer stopped")
     }
 
