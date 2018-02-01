@@ -28,6 +28,9 @@ class StopButton: UIButton {
         layer.borderWidth = 2
         frame.size = CGSize(width: 60, height: 50)
         
+        //disable on initialization
+        isEnabled = false
+        
         //set disabled property styles
         setTitleColor(UIColor.black, for: UIControlState.disabled)
     }

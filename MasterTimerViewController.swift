@@ -16,6 +16,7 @@ class MasterTimerViewController: UIViewController {
     
     @IBOutlet weak var startAll: UIButton!
     var race: Race?
+    var buttonArray = [UIButton]()
     
     //MARK: Life Cycle
     override func viewDidLoad() {
@@ -58,6 +59,7 @@ class MasterTimerViewController: UIViewController {
             timer = Timer.scheduledTimer(timeInterval: 0.10, target: self, selector: aSelector, userInfo:nil, repeats: true)
             startTime = NSDate.timeIntervalSinceReferenceDate
         }
+        enableButtons()
         startLapTime()
     }
 
@@ -87,6 +89,7 @@ class MasterTimerViewController: UIViewController {
     //MARK: Private Methods
     
     func setupRunnerStack() {
+        buttonArray = []
         
         for view in runnerStack.arrangedSubviews{
             runnerStack.removeArrangedSubview(view)
@@ -100,13 +103,16 @@ class MasterTimerViewController: UIViewController {
             //create Name Label
             let runnerName = UILabel()
             runnerName.text = "\(currentRunner?.nameFirst ?? "Runner") \(currentRunner?.nameLast ?? "")"
-            
             runnerName.font = UIFont(name: "OpenSans-Regular", size: 20)
             
             
             //create Buttons
             let lap = LapButton(run: currentRunner!)
             let stop = StopButton(run: currentRunner!, lap: lap)
+            
+            //add buttons to button array
+            buttonArray.append(lap)
+            buttonArray.append(stop)
             
             //add event listeners
             lap.addTarget(self, action: #selector(lapButtonPressed),for: .touchUpInside)
@@ -119,7 +125,7 @@ class MasterTimerViewController: UIViewController {
             horizontalStack.distribution = .fillEqually
             horizontalStack.spacing = 10
             
-            //add to stack
+            //add to horizontal stack
             horizontalStack.addArrangedSubview(runnerName)
             horizontalStack.addArrangedSubview(lap)
             horizontalStack.addArrangedSubview(stop)
@@ -131,6 +137,13 @@ class MasterTimerViewController: UIViewController {
     }
     
     //MARK: Actions
+    
+    func enableButtons() {
+        for button in buttonArray {
+            button.isEnabled = true
+        }
+        
+    }
     
     func lapButtonPressed(sender: LapButton){
         sender.callToLap()
