@@ -32,16 +32,18 @@ class StopButton: UIButton {
         isEnabled = false
         
         //set disabled property styles
-        setTitleColor(UIColor.black, for: UIControlState.disabled)
+        setTitleColor(UIColor.darkGray, for: UIControlState.disabled)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func disableLapButton() {
+    func disableButtons() {
         lap.isEnabled = false
         lap.backgroundColor = UIColor.lightGray
+        
+        isEnabled = false
     }
     
 }

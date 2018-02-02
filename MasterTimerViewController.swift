@@ -152,7 +152,7 @@ class MasterTimerViewController: UIViewController {
     
     func stopButtonPressed(sender: StopButton){
         print("Stop Button Pressed")
-        sender.disableLapButton()
+        sender.disableButtons()
         
     }
     
