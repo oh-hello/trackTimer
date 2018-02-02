@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G1114" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -167,7 +167,6 @@
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveToTimer:" destination="GX4-hU-Xbz" eventType="touchUpInside" id="UoN-Vi-nwG"/>
-                                    <segue destination="ZfU-vv-HLo" kind="show" identifier="toTimer" animates="NO" id="b7p-0x-geH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddg-NY-4Rc">
@@ -204,6 +203,7 @@
                         <outlet property="numberPicker" destination="KmG-pK-WCq" id="plB-OE-6tA"/>
                         <outlet property="runController" destination="H44-eg-FRg" id="rbK-BB-zAZ"/>
                         <outlet property="saveButton" destination="SEv-RQ-5F4" id="X8j-l3-3Px"/>
+                        <segue destination="ZfU-vv-HLo" kind="show" identifier="toTimer" animates="NO" id="SIj-wK-ZJh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="esm-59-gox" userLabel="First Responder" sceneMemberID="firstResponder"/>
