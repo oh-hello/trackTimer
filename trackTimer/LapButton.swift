@@ -9,11 +9,11 @@
 import UIKit
 
 class LapButton: UIButton {
-
-   //MARK: Properties
+    
+    //MARK: Properties
     let runner:Runner
     
-   //MARK: Initialization
+    //MARK: Initialization
     required init(run: Runner) {
         runner = run
         super.init(frame: .zero)
@@ -23,9 +23,15 @@ class LapButton: UIButton {
         setTitle("Lap", for: UIControlState.normal)
         titleLabel?.font = UIFont(name: "FjallaOne-Regular", size: 30)
         setTitleColor(UIColor.black, for: UIControlState.normal)
-        setTitleColor(UIColor.white, for: UIControlState.focused)
         layer.borderWidth = 2
         frame.size = CGSize(width: 60, height: 50)
+        
+        //disable on initialization
+        isEnabled = false 
+        
+        //set disabled property styles
+        setTitleColor(UIColor.black, for: UIControlState.disabled)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

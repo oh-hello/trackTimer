@@ -118,10 +118,42 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
             let nameFirst = run[0].text
             let nameLast = run[1].text
             let runner = Runner(nameFirst: nameFirst ?? "", nameLast: nameLast ?? "")
-            runnerArray.append(runner!)
+            
+            //catch empty runner
+            switch runner{
+            case nil:
+                return []
+            default:
+                runnerArray.append(runner!)
+            }
+            
         }
         return runnerArray
+    }
+    
+    func showNilRaceAlert() {
+        let alertController = UIAlertController(title: "Race Error", message: "The race could not be created. Please make sure each runner has a first name.", preferredStyle: .actionSheet)
         
+        let defaultAction = UIAlertAction(title: "Dismiss", style: .default, handler: { (alert: UIAlertAction!) -> Void in
+         //  Do some action here.
+         })
+        
+        
+        /*let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (alert: UIAlertAction!) -> Void in
+            //  Do something here upon cancellation.
+        })*/
+        
+        alertController.addAction(defaultAction)
+        //alertController.addAction(deleteAction)
+        //alertController.addAction(cancelAction)
+        
+        if let popoverController = alertController.popoverPresentationController {
+            popoverController.sourceView = self.view
+            popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+            popoverController.permittedArrowDirections = []
+        }
+        
+        self.present(alertController, animated: false, completion: nil)
     }
     
     // MARK: - Navigation
@@ -132,6 +164,23 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
     
     @IBAction func saveToTimer(_ sender: Any) {
         print("save button pressed")
+        
+        //Setup Runners to pass
+        runnerList = createRunners()
+        
+        //Setup Race to pass
+        let date = dateLabel.text
+        let location = locationField.text
+        let distance = distanceField.text
+        createRace(date!, location!, distance!, runnerList)
+        
+        //check nil race of perform segue
+        switch race{
+        case nil:
+            showNilRaceAlert()
+        default:
+            performSegue(withIdentifier: "toTimer", sender: sender)
+        }
     }
     
     
@@ -144,19 +193,9 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
             //perform segue to landing screen
             cancel(sender as Any)
         default:
-        
-        //Setup Runners to pass
-        runnerList = createRunners()
-        
-        //Setup Race to pass
-        let date = dateLabel.text
-        let location = locationField.text
-        let distance = distanceField.text
-        
-        //Set Destination and perform segue to Master Timer
-        let destination = segue.destination as? MasterTimerViewController
-        createRace(date!, location!, distance!, runnerList)
-        destination!.race = self.race
+            //Set Destination and perform segue to Master Timer
+            let destination = segue.destination as? MasterTimerViewController
+            destination!.race = self.race
         }
     
         

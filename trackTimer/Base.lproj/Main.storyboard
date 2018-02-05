@@ -167,7 +167,6 @@
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveToTimer:" destination="GX4-hU-Xbz" eventType="touchUpInside" id="UoN-Vi-nwG"/>
-                                    <segue destination="ZfU-vv-HLo" kind="show" identifier="toTimer" animates="NO" id="b7p-0x-geH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddg-NY-4Rc">
@@ -204,6 +203,7 @@
                         <outlet property="numberPicker" destination="KmG-pK-WCq" id="plB-OE-6tA"/>
                         <outlet property="runController" destination="H44-eg-FRg" id="rbK-BB-zAZ"/>
                         <outlet property="saveButton" destination="SEv-RQ-5F4" id="X8j-l3-3Px"/>
+                        <segue destination="ZfU-vv-HLo" kind="show" identifier="toTimer" animates="NO" id="SIj-wK-ZJh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="esm-59-gox" userLabel="First Responder" sceneMemberID="firstResponder"/>
