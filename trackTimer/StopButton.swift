@@ -45,5 +45,5 @@ class StopButton: UIButton {
         
         isEnabled = false
     }
-    
+
 }

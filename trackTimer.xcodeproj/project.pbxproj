@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		20413467200530D0003BD623 /* MasterTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20413466200530D0003BD623 /* MasterTimerViewController.swift */; };
+		205837122022363100FCECEE /* RaceReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205837112022363100FCECEE /* RaceReportViewController.swift */; };
 		20895AF8200E70590027222A /* PersistentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20895AF7200E70590027222A /* PersistentData.swift */; };
 		DE07BDCB1FDB01060046E484 /* GlobalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE07BDCA1FDB01060046E484 /* GlobalData.swift */; };
 		DE07BDCD1FDB01640046E484 /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE07BDCC1FDB01640046E484 /* Runner.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		20413466200530D0003BD623 /* MasterTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MasterTimerViewController.swift; path = ../MasterTimerViewController.swift; sourceTree = "<group>"; };
+		205837112022363100FCECEE /* RaceReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RaceReportViewController.swift; path = ../RaceReportViewController.swift; sourceTree = "<group>"; };
 		20895AF7200E70590027222A /* PersistentData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistentData.swift; path = ../PersistentData.swift; sourceTree = "<group>"; };
 		DE07BDCA1FDB01060046E484 /* GlobalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalData.swift; sourceTree = "<group>"; };
 		DE07BDCC1FDB01640046E484 /* Runner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Runner.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				DE670AE71FD9C06C00D4454A /* RaceCreationViewController.swift */,
 				20413466200530D0003BD623 /* MasterTimerViewController.swift */,
 				DE33D5431FE43D1E00730121 /* ArchiveTableViewController.swift */,
+				205837112022363100FCECEE /* RaceReportViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				DE07BDCB1FDB01060046E484 /* GlobalData.swift in Sources */,
 				DE33D5441FE43D1E00730121 /* ArchiveTableViewController.swift in Sources */,
 				DE07BDCF1FDB0E950046E484 /* Race.swift in Sources */,
+				205837122022363100FCECEE /* RaceReportViewController.swift in Sources */,
 				DE670AE81FD9C06C00D4454A /* RaceCreationViewController.swift in Sources */,
 				20413467200530D0003BD623 /* MasterTimerViewController.swift in Sources */,
 			);

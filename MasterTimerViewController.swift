@@ -151,13 +151,31 @@ class MasterTimerViewController: UIViewController {
     }
     
     func stopButtonPressed(sender: StopButton){
+        sender.callToStop()
         print("Stop Button Pressed")
         sender.disableButtons()
         
     }
     
-    
     // MARK: - Navigation
+    @IBAction func segueToRaceReport(_ sender: Any) {
+        performSegue(withIdentifier: "toRaceReport", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        super.prepare(for: segue, sender: sender)
+        
+        switch segue.destination{
+        case is RaceCreationViewController:
+            cancel(sender as Any)
+        default:
+            
+        let destination = segue.destination as? RaceReportViewController
+        destination!.race = self.race
+        }
+        
+        
+    }
     
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: false, completion: nil)
