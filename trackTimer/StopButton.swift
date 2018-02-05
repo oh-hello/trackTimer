@@ -32,7 +32,7 @@ class StopButton: UIButton {
         isEnabled = false
         
         //set disabled property styles
-        setTitleColor(UIColor.black, for: UIControlState.disabled)
+        setTitleColor(UIColor.darkGray, for: UIControlState.disabled)
     }
     
     required init?(coder aDecoder: NSCoder) {

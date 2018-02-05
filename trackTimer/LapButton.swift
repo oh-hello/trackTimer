@@ -30,7 +30,7 @@ class LapButton: UIButton {
         isEnabled = false 
         
         //set disabled property styles
-        setTitleColor(UIColor.black, for: UIControlState.disabled)
+        setTitleColor(UIColor.darkGray, for: UIControlState.disabled)
         
     }
     

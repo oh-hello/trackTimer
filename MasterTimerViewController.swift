@@ -136,6 +136,15 @@ class MasterTimerViewController: UIViewController {
         }
     }
     
+    func checkButtonsDisabled() -> Bool {
+        for button in buttonArray{
+            if button.isEnabled == true {
+                return false
+            }
+        }
+        return true
+    }
+    
     //MARK: Actions
     
     func enableButtons() {
@@ -153,7 +162,12 @@ class MasterTimerViewController: UIViewController {
     func stopButtonPressed(sender: StopButton){
         sender.callToStop()
         print("Stop Button Pressed")
-        sender.disableLapButton()
+        sender.disableButtons()
+        
+        if checkButtonsDisabled() == true {
+            timer.invalidate()
+            startAll.isEnabled = false
+        }
         
     }
     
