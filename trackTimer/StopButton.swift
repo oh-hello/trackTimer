@@ -39,10 +39,16 @@ class StopButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: Private Functions
+    func callToStop(){
+        runner.lapLapTimer()
+        runner.stopLapTimer()
+        runner.getTotalTime()
+        print("timer stopped")
+    }
     func disableButtons() {
         lap.isEnabled = false
         lap.backgroundColor = UIColor.lightGray
-        
         isEnabled = false
     }
 
