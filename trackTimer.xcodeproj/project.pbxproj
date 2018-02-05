@@ -144,8 +144,8 @@
 				DE7B045F1FD70A4700E6DFAB /* ViewController.swift */,
 				DE670AE71FD9C06C00D4454A /* RaceCreationViewController.swift */,
 				20413466200530D0003BD623 /* MasterTimerViewController.swift */,
-				DE33D5431FE43D1E00730121 /* ArchiveTableViewController.swift */,
 				205837112022363100FCECEE /* RaceReportViewController.swift */,
+				DE33D5431FE43D1E00730121 /* ArchiveTableViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";

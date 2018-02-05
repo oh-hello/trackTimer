@@ -46,5 +46,9 @@ class StopButton: UIButton {
         runner.getTotalTime()
         print("timer stopped")
     }
-
+    func disableLapButton() {
+        lap.isEnabled = false
+        lap.backgroundColor = UIColor.lightGray
+        isEnabled = false
+    }
 }

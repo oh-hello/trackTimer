@@ -52,8 +52,6 @@ class Runner {
     }
     
     func stopLapTimer(){
-        //lapTimer.invalidate()
-        //runnerTimesDoubles.append(currentTimeTotal)
         convertDifference()
         runnerTimesDifference.remove(at: 0)
     }
