@@ -10,12 +10,16 @@ import UIKit
 
 class RaceReportViewController: UIViewController {
 
+    //MARK: Properties
+    
     @IBOutlet weak var timeReportStack: UIStackView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     
     var race: Race?
+    
+    //MARK: Life Cycle
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
@@ -27,7 +31,20 @@ class RaceReportViewController: UIViewController {
         
         setUpTimeReportStack()
     }
-
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    //MARK: Private Methods
     
     func setUpTimeReportStack(){
         for view in timeReportStack.arrangedSubviews{
@@ -68,19 +85,7 @@ class RaceReportViewController: UIViewController {
         }
         
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    //MARK Navigaiton
+    //MARK: Navigation
     
     
     
