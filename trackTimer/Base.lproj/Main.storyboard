@@ -319,16 +319,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5e-tk-UPP">
-                                <rect key="frame" x="112" y="42" width="200" height="55"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="kQx-1s-T5D"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="FjallaOne-Regular" family="Fjalla One" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMx-rl-E0B">
                                 <rect key="frame" x="312" y="42" width="400" height="55"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
@@ -347,41 +337,50 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5T8-wo-hc9">
-                                <rect key="frame" x="24" y="130" width="980" height="600"/>
+                                <rect key="frame" x="112" y="130" width="800" height="601"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dKt-Hh-6yU">
-                                        <rect key="frame" x="0.0" y="0.0" width="980" height="600"/>
+                                        <rect key="frame" x="0.0" y="-1" width="800" height="600"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="600" id="p6n-uB-jkD"/>
+                                            <constraint firstAttribute="height" constant="600" id="pSu-Za-8tM"/>
+                                            <constraint firstAttribute="width" constant="800" id="x6w-dP-ye2"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="dKt-Hh-6yU" secondAttribute="trailing" id="8mi-SJ-1NM"/>
-                                    <constraint firstItem="dKt-Hh-6yU" firstAttribute="centerY" secondItem="5T8-wo-hc9" secondAttribute="centerY" id="Lhp-ek-vAP"/>
-                                    <constraint firstItem="dKt-Hh-6yU" firstAttribute="leading" secondItem="5T8-wo-hc9" secondAttribute="leading" id="h4a-da-Kf9"/>
-                                    <constraint firstAttribute="bottom" secondItem="dKt-Hh-6yU" secondAttribute="bottom" id="lhP-Z3-IMe"/>
-                                    <constraint firstItem="dKt-Hh-6yU" firstAttribute="top" secondItem="5T8-wo-hc9" secondAttribute="top" id="s8R-Oa-wuU"/>
-                                    <constraint firstItem="dKt-Hh-6yU" firstAttribute="centerX" secondItem="5T8-wo-hc9" secondAttribute="centerX" id="veD-MU-QWR"/>
-                                    <constraint firstAttribute="height" constant="600" id="wGd-Wb-WNe"/>
+                                    <constraint firstAttribute="trailing" secondItem="dKt-Hh-6yU" secondAttribute="trailing" constant="2" id="A88-3Q-wpf"/>
+                                    <constraint firstAttribute="width" constant="800" id="anc-Y2-U6e"/>
+                                    <constraint firstItem="dKt-Hh-6yU" firstAttribute="top" secondItem="5T8-wo-hc9" secondAttribute="top" constant="-1" id="fLE-66-n4i"/>
+                                    <constraint firstItem="dKt-Hh-6yU" firstAttribute="centerX" secondItem="5T8-wo-hc9" secondAttribute="centerX" id="hFJ-ih-AxZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="dKt-Hh-6yU" secondAttribute="bottom" constant="1" id="lJc-Gw-Ucb"/>
                                 </constraints>
                             </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5e-tk-UPP">
+                                <rect key="frame" x="112" y="42" width="200" height="55"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="keE-ta-QKn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="FjallaOne-Regular" family="Fjalla One" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dUO-PO-96G" firstAttribute="firstBaseline" secondItem="hMx-rl-E0B" secondAttribute="firstBaseline" id="1UX-zg-nJC"/>
-                            <constraint firstItem="FVs-tl-dL9" firstAttribute="top" secondItem="5T8-wo-hc9" secondAttribute="bottom" constant="38" id="4Vg-cV-ZXZ"/>
                             <constraint firstItem="dUO-PO-96G" firstAttribute="leading" secondItem="hMx-rl-E0B" secondAttribute="trailing" id="7LO-UO-W5r"/>
-                            <constraint firstItem="dUO-PO-96G" firstAttribute="firstBaseline" secondItem="X5e-tk-UPP" secondAttribute="firstBaseline" id="CxX-AU-CzI"/>
-                            <constraint firstItem="5T8-wo-hc9" firstAttribute="top" secondItem="zhA-69-gQp" secondAttribute="top" constant="130" id="JG2-Cz-w26"/>
-                            <constraint firstItem="X5e-tk-UPP" firstAttribute="leading" secondItem="zhA-69-gQp" secondAttribute="leadingMargin" constant="92" id="RIl-eC-rJ7"/>
-                            <constraint firstItem="5T8-wo-hc9" firstAttribute="trailing" secondItem="zhA-69-gQp" secondAttribute="trailingMargin" id="T3x-Zz-AsZ"/>
-                            <constraint firstItem="5T8-wo-hc9" firstAttribute="top" secondItem="dUO-PO-96G" secondAttribute="bottom" constant="33" id="Vb6-2z-635"/>
-                            <constraint firstItem="hMx-rl-E0B" firstAttribute="leading" secondItem="X5e-tk-UPP" secondAttribute="trailing" id="c4w-xD-9XW"/>
-                            <constraint firstItem="dUO-PO-96G" firstAttribute="baseline" secondItem="X5e-tk-UPP" secondAttribute="baseline" id="epR-eT-7pd"/>
+                            <constraint firstItem="X5e-tk-UPP" firstAttribute="firstBaseline" secondItem="hMx-rl-E0B" secondAttribute="firstBaseline" id="D7X-8h-XxU"/>
+                            <constraint firstItem="5T8-wo-hc9" firstAttribute="top" secondItem="dUO-PO-96G" secondAttribute="bottom" constant="33" id="QFH-tM-6W2"/>
+                            <constraint firstItem="5T8-wo-hc9" firstAttribute="top" secondItem="zhA-69-gQp" secondAttribute="top" constant="130" id="SE5-yD-MSu"/>
+                            <constraint firstItem="hMx-rl-E0B" firstAttribute="leading" secondItem="X5e-tk-UPP" secondAttribute="trailing" id="YbA-4P-aoI"/>
+                            <constraint firstItem="X5e-tk-UPP" firstAttribute="leading" secondItem="zhA-69-gQp" secondAttribute="leadingMargin" constant="92" id="g4t-dS-RwH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dUO-PO-96G" secondAttribute="trailing" constant="92" id="gVK-My-Z3k"/>
                             <constraint firstItem="dUO-PO-96G" firstAttribute="top" secondItem="OIb-dE-ls9" secondAttribute="bottom" constant="22" id="h2I-rX-F1Y"/>
-                            <constraint firstItem="5T8-wo-hc9" firstAttribute="leading" secondItem="zhA-69-gQp" secondAttribute="leadingMargin" constant="4" id="ns7-1g-CRD"/>
+                            <constraint firstItem="X5e-tk-UPP" firstAttribute="baseline" secondItem="hMx-rl-E0B" secondAttribute="baseline" id="hay-AK-MQy"/>
+                            <constraint firstItem="FVs-tl-dL9" firstAttribute="top" secondItem="5T8-wo-hc9" secondAttribute="bottom" constant="37" id="iiC-Bq-wVt"/>
+                            <constraint firstItem="X5e-tk-UPP" firstAttribute="leading" secondItem="5T8-wo-hc9" secondAttribute="leading" id="pot-2r-4Zh"/>
+                            <constraint firstItem="5T8-wo-hc9" firstAttribute="trailing" secondItem="dUO-PO-96G" secondAttribute="trailing" id="stP-8X-ywU"/>
                             <constraint firstItem="dUO-PO-96G" firstAttribute="baseline" secondItem="hMx-rl-E0B" secondAttribute="baseline" id="whU-iA-MCC"/>
                         </constraints>
                     </view>
@@ -389,6 +388,7 @@
                         <outlet property="dateLabel" destination="X5e-tk-UPP" id="R9v-H1-tvL"/>
                         <outlet property="distanceLabel" destination="hMx-rl-E0B" id="MvM-rR-y3A"/>
                         <outlet property="locationLabel" destination="dUO-PO-96G" id="fWk-mY-6dS"/>
+                        <outlet property="reportScroll" destination="5T8-wo-hc9" id="2hF-JS-4fi"/>
                         <outlet property="timeReportStack" destination="dKt-Hh-6yU" id="o9r-gk-z6V"/>
                     </connections>
                 </viewController>

@@ -12,6 +12,7 @@ class RaceReportViewController: UIViewController {
 
     //MARK: Properties
     
+    @IBOutlet weak var reportScroll: UIScrollView!
     @IBOutlet weak var timeReportStack: UIStackView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
@@ -68,6 +69,7 @@ class RaceReportViewController: UIViewController {
             horizontalStack.axis = .horizontal
             horizontalStack.distribution = .fillEqually
             horizontalStack.spacing = 10
+            //horizontalStack.
             
             //add to stack
             horizontalStack.addArrangedSubview(runnerName)
