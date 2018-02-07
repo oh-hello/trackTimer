@@ -299,6 +299,7 @@
                         <outlet property="locationLabel" destination="MXJ-sz-TI7" id="NlG-Fx-gTI"/>
                         <outlet property="masterTimerClock" destination="PuZ-Gi-rDe" id="siC-li-abN"/>
                         <outlet property="runnerStack" destination="QeR-Lm-5cR" id="g47-e3-OmI"/>
+                        <outlet property="saveRace" destination="Cf8-dU-ofh" id="NmZ-SC-Deo"/>
                         <outlet property="startAll" destination="ZHP-bM-SRo" id="gTU-lN-Pva"/>
                         <segue destination="BvG-YP-gac" kind="show" identifier="toRaceReport" id="by2-bI-thQ"/>
                     </connections>
