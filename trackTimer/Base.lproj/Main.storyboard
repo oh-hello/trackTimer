@@ -337,14 +337,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5T8-wo-hc9">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5T8-wo-hc9">
                                 <rect key="frame" x="112" y="130" width="800" height="601"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dKt-Hh-6yU">
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dKt-Hh-6yU">
                                         <rect key="frame" x="0.0" y="-1" width="800" height="600"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="600" id="pSu-Za-8tM"/>
-                                            <constraint firstAttribute="width" constant="800" id="x6w-dP-ye2"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="800" id="x6w-dP-ye2"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
