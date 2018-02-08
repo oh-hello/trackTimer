@@ -10,10 +10,10 @@
 		20413467200530D0003BD623 /* MasterTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20413466200530D0003BD623 /* MasterTimerViewController.swift */; };
 		205837122022363100FCECEE /* RaceReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205837112022363100FCECEE /* RaceReportViewController.swift */; };
 		20895AF8200E70590027222A /* PersistentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20895AF7200E70590027222A /* PersistentData.swift */; };
+		20B99B99202CCEDF00010AC7 /* ArchiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B99B98202CCEDF00010AC7 /* ArchiveViewController.swift */; };
 		DE07BDCB1FDB01060046E484 /* GlobalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE07BDCA1FDB01060046E484 /* GlobalData.swift */; };
 		DE07BDCD1FDB01640046E484 /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE07BDCC1FDB01640046E484 /* Runner.swift */; };
 		DE07BDCF1FDB0E950046E484 /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE07BDCE1FDB0E950046E484 /* Race.swift */; };
-		DE33D5441FE43D1E00730121 /* ArchiveTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE33D5431FE43D1E00730121 /* ArchiveTableViewController.swift */; };
 		DE3759C81FD86D1A001C30E0 /* FjallaOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE3759C71FD86D1A001C30E0 /* FjallaOne-Regular.ttf */; };
 		DE3759CA1FD86D32001C30E0 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE3759C91FD86D32001C30E0 /* OpenSans-Regular.ttf */; };
 		DE4032971FE2F26500B1E617 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE4032961FE2F26500B1E617 /* OpenSans-BoldItalic.ttf */; };
@@ -52,10 +52,10 @@
 		20413466200530D0003BD623 /* MasterTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MasterTimerViewController.swift; path = ../MasterTimerViewController.swift; sourceTree = "<group>"; };
 		205837112022363100FCECEE /* RaceReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RaceReportViewController.swift; path = ../RaceReportViewController.swift; sourceTree = "<group>"; };
 		20895AF7200E70590027222A /* PersistentData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistentData.swift; path = ../PersistentData.swift; sourceTree = "<group>"; };
+		20B99B98202CCEDF00010AC7 /* ArchiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchiveViewController.swift; sourceTree = "<group>"; };
 		DE07BDCA1FDB01060046E484 /* GlobalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalData.swift; sourceTree = "<group>"; };
 		DE07BDCC1FDB01640046E484 /* Runner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Runner.swift; sourceTree = "<group>"; };
 		DE07BDCE1FDB0E950046E484 /* Race.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Race.swift; sourceTree = "<group>"; };
-		DE33D5431FE43D1E00730121 /* ArchiveTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArchiveTableViewController.swift; sourceTree = "<group>"; };
 		DE3759C71FD86D1A001C30E0 /* FjallaOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FjallaOne-Regular.ttf"; path = "Fjalla_One/FjallaOne-Regular.ttf"; sourceTree = "<group>"; };
 		DE3759C91FD86D32001C30E0 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Regular.ttf"; path = "Open_Sans/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		DE4032951FE2F25B00B1E617 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Bold.ttf"; path = "Open_Sans/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
@@ -145,7 +145,7 @@
 				DE670AE71FD9C06C00D4454A /* RaceCreationViewController.swift */,
 				20413466200530D0003BD623 /* MasterTimerViewController.swift */,
 				205837112022363100FCECEE /* RaceReportViewController.swift */,
-				DE33D5431FE43D1E00730121 /* ArchiveTableViewController.swift */,
+				20B99B98202CCEDF00010AC7 /* ArchiveViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -344,13 +344,13 @@
 			files = (
 				DE7B04601FD70A4700E6DFAB /* ViewController.swift in Sources */,
 				DE77D2A21FED813D00DA632A /* RunnerControl.swift in Sources */,
+				20B99B99202CCEDF00010AC7 /* ArchiveViewController.swift in Sources */,
 				20895AF8200E70590027222A /* PersistentData.swift in Sources */,
 				DE7B045E1FD70A4700E6DFAB /* AppDelegate.swift in Sources */,
 				DE74B1662018F66D00CBCD70 /* LapButton.swift in Sources */,
 				DEF316412020DF64002CB9B4 /* StopButton.swift in Sources */,
 				DE07BDCD1FDB01640046E484 /* Runner.swift in Sources */,
 				DE07BDCB1FDB01060046E484 /* GlobalData.swift in Sources */,
-				DE33D5441FE43D1E00730121 /* ArchiveTableViewController.swift in Sources */,
 				DE07BDCF1FDB0E950046E484 /* Race.swift in Sources */,
 				205837122022363100FCECEE /* RaceReportViewController.swift in Sources */,
 				DE670AE81FD9C06C00D4454A /* RaceCreationViewController.swift in Sources */,
