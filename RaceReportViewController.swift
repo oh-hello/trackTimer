@@ -30,6 +30,8 @@ class RaceReportViewController: UIViewController {
         locationLabel.text = race?.location
         distanceLabel.text = race?.distance
         
+        
+        
         setUpTimeReportStack()
     }
     
