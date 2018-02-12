@@ -92,7 +92,7 @@
                                 <rect key="frame" x="0.0" y="28" width="1024" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FIF-MP-EZP" id="rzv-s9-AMv">
-                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -337,25 +337,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5T8-wo-hc9">
-                                <rect key="frame" x="112" y="130" width="800" height="601"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dKt-Hh-6yU">
-                                        <rect key="frame" x="0.0" y="-1" width="800" height="600"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="600" id="pSu-Za-8tM"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="800" id="x6w-dP-ye2"/>
-                                        </constraints>
-                                    </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="dKt-Hh-6yU" secondAttribute="trailing" constant="2" id="A88-3Q-wpf"/>
-                                    <constraint firstAttribute="width" constant="800" id="anc-Y2-U6e"/>
-                                    <constraint firstItem="dKt-Hh-6yU" firstAttribute="top" secondItem="5T8-wo-hc9" secondAttribute="top" constant="-1" id="fLE-66-n4i"/>
-                                    <constraint firstItem="dKt-Hh-6yU" firstAttribute="centerX" secondItem="5T8-wo-hc9" secondAttribute="centerX" id="hFJ-ih-AxZ"/>
-                                    <constraint firstAttribute="bottom" secondItem="dKt-Hh-6yU" secondAttribute="bottom" constant="1" id="lJc-Gw-Ucb"/>
-                                </constraints>
-                            </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5e-tk-UPP">
                                 <rect key="frame" x="112" y="42" width="200" height="55"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
@@ -366,6 +347,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5T8-wo-hc9">
+                                <rect key="frame" x="112" y="116" width="800" height="601"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dKt-Hh-6yU">
+                                        <rect key="frame" x="0.0" y="-1" width="800" height="600"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="600" id="pSu-Za-8tM"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="800" id="x6w-dP-ye2"/>
+                                        </constraints>
+                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="dKt-Hh-6yU" secondAttribute="trailing" constant="2" id="A88-3Q-wpf"/>
+                                    <constraint firstAttribute="width" constant="800" id="anc-Y2-U6e"/>
+                                    <constraint firstItem="dKt-Hh-6yU" firstAttribute="top" secondItem="5T8-wo-hc9" secondAttribute="top" constant="-1" id="fLE-66-n4i"/>
+                                    <constraint firstItem="dKt-Hh-6yU" firstAttribute="leading" secondItem="5T8-wo-hc9" secondAttribute="leading" id="hFJ-ih-AxZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="dKt-Hh-6yU" secondAttribute="bottom" constant="1" id="lJc-Gw-Ucb"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

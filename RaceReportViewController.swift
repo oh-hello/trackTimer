@@ -30,6 +30,8 @@ class RaceReportViewController: UIViewController {
         locationLabel.text = race?.location
         distanceLabel.text = race?.distance
         
+        reportScroll.contentInset.left = 20.0
+        
         setUpTimeReportStack()
     }
     
