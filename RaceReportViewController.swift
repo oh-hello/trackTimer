@@ -91,6 +91,9 @@ class RaceReportViewController: UIViewController {
     }
     //MARK: Navigation
     
+    @IBAction func doneButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "toMainFromReport", sender: sender)
+    }
     
     
 }
