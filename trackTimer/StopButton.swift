@@ -25,6 +25,7 @@ class StopButton: UIButton {
         setTitle("Stop", for: UIControlState.normal)
         titleLabel?.font = UIFont(name: "FjallaOne-Regular", size: 30)
         setTitleColor(UIColor.black, for: UIControlState.normal)
+        setTitleColor(UIColor.white, for: UIControlState.highlighted)
         layer.borderWidth = 2
         frame.size = CGSize(width: 60, height: 50)
         
