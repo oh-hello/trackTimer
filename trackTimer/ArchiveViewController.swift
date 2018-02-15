@@ -15,19 +15,16 @@ class ArchiveViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var archiveTable: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("in numberOfRowsInSection")
         return allRaces.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("in cellForRowAt")
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = allRaces[indexPath.row].date
         return cell
     }
     
     internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        print("segueToRaceReport")
         myIndex = indexPath.row
         performSegue(withIdentifier: "toRaceReportFromArchive", sender: self)
     }
@@ -35,14 +32,12 @@ class ArchiveViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         super.prepare(for: segue, sender: sender)
         
-        print("calls prepare")
         switch segue.destination{
         case is ViewController:
             back(sender as Any)
         default:
             let destination = segue.destination as? RaceReportViewController
             destination!.race = allRaces[myIndex]
-            print("entered switch")
         }
     }
     
