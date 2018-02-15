@@ -13,7 +13,7 @@ class MasterTimerViewController: UIViewController {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var runnerStack: UIStackView!
-    
+    @IBOutlet weak var saveRace: UIButton!
     @IBOutlet weak var startAll: UIButton!
     var race: Race?
     var buttonArray = [UIButton]()
@@ -36,6 +36,9 @@ class MasterTimerViewController: UIViewController {
         //format start all button
         startAll.layer.borderWidth = 2
         startAll.layer.cornerRadius = 10
+        
+        //disable save button
+        saveRace.isEnabled = false
         
         setupRunnerStack()
     }
@@ -61,6 +64,7 @@ class MasterTimerViewController: UIViewController {
         }
         enableButtons()
         startLapTime()
+        startAll.isEnabled = false
     }
 
     func runTimer(){
@@ -166,7 +170,8 @@ class MasterTimerViewController: UIViewController {
         
         if checkButtonsDisabled() == true {
             timer.invalidate()
-            startAll.isEnabled = false
+            
+            saveRace.isEnabled = true
         }
         
     }

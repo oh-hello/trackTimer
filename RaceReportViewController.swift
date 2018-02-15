@@ -10,12 +10,17 @@ import UIKit
 
 class RaceReportViewController: UIViewController {
 
+    //MARK: Properties
+    
+    @IBOutlet weak var reportScroll: UIScrollView!
     @IBOutlet weak var timeReportStack: UIStackView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     
     var race: Race?
+    
+    //MARK: Life Cycle
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
@@ -25,9 +30,24 @@ class RaceReportViewController: UIViewController {
         locationLabel.text = race?.location
         distanceLabel.text = race?.distance
         
+        reportScroll.contentInset.left = 20.0
+        
         setUpTimeReportStack()
     }
-
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    //MARK: Private Methods
     
     func setUpTimeReportStack(){
         for view in timeReportStack.arrangedSubviews{
@@ -51,6 +71,7 @@ class RaceReportViewController: UIViewController {
             horizontalStack.axis = .horizontal
             horizontalStack.distribution = .fillEqually
             horizontalStack.spacing = 10
+            //horizontalStack.
             
             //add to stack
             horizontalStack.addArrangedSubview(runnerName)
@@ -68,6 +89,7 @@ class RaceReportViewController: UIViewController {
         }
         
     }
+    //MARK: Navigation
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,9 +103,6 @@ class RaceReportViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    //MARK Navigaiton
-    
     
     
 }
