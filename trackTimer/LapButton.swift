@@ -23,7 +23,7 @@ class LapButton: UIButton {
         setTitle("Lap", for: UIControlState.normal)
         titleLabel?.font = UIFont(name: "FjallaOne-Regular", size: 30)
         setTitleColor(UIColor.black, for: UIControlState.normal)
-        setTitleColor(UIColor.white, for: UIControlState.highlighted)
+        setTitleColor(UIColor.lightGray, for: UIControlState.highlighted)
         layer.borderWidth = 2
         frame.size = CGSize(width: 60, height: 50)
         
