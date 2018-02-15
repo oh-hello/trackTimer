@@ -8,28 +8,52 @@
 
 import UIKit
 
-class ArchiveViewController: UIViewController {
+var myIndex = 0
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+class ArchiveViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var archiveTable: UITableView!
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("in numberOfRowsInSection")
+        return allRaces.count
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("in cellForRowAt")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = allRaces[indexPath.row].date
+        return cell
     }
-    */
-
+    
+    internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        print("segueToRaceReport")
+        myIndex = indexPath.row
+        performSegue(withIdentifier: "toRaceReportFromArchive", sender: self)
+    }
+   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        super.prepare(for: segue, sender: sender)
+        
+        print("calls prepare")
+        switch segue.destination{
+        case is ViewController:
+            back(sender as Any)
+        default:
+            let destination = segue.destination as? RaceReportViewController
+            destination!.race = allRaces[myIndex]
+            print("entered switch")
+        }
+    }
+    
+    @IBAction func back(_ sender: Any){
+        dismiss(animated: false, completion: nil)
+    }
+    
+    
+    override func viewDidLoad(){
+        super.viewDidLoad()
+    }
+ 
+    
 }

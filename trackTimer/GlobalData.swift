@@ -9,4 +9,4 @@
 import Foundation
 import UIKit
 
-//var allRaces = [Race]
+var allRaces = [Race]()
