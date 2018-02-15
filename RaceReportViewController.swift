@@ -87,13 +87,5 @@ class RaceReportViewController: UIViewController {
             //add to vertical stack
             timeReportStack.addArrangedSubview(horizontalStack)
         }
-        
     }
-    //MARK: Navigation
-    
-    @IBAction func doneButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "toMainFromReport", sender: sender)
-    }
-    
-    
 }

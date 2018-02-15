@@ -202,10 +202,11 @@ class MasterTimerViewController: UIViewController {
             cancel(sender as Any)
         default:
             
+        //append current race to global race array
+        allRaces.append(race!)
         let destination = segue.destination as? RaceReportViewController
         destination!.race = self.race
         }
-        
         
     }
     
