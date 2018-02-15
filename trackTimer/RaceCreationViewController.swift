@@ -14,6 +14,7 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
     let pickerData = [[1,2,3,4,5,6,7,8,9,10]]
     
     //MARK: Properties
+    @IBOutlet weak var viewScroller: UIScrollView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var locationField: UITextField!
     @IBOutlet weak var distanceField: UITextField!
@@ -37,6 +38,11 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
         // Handle the text field’s user input through delegate callbacks
         locationField.delegate = self
         distanceField.delegate = self
+        
+        //manage keyboard changes
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: Notification.Name.UIKeyboardWillHide, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
 
     }
     
@@ -96,12 +102,31 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
     
     //MARK: UITextFieldDelegate
     
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        return true
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         //Hide the Keyboard
         textField.resignFirstResponder()
         return true
     }
     
+    //manage changes to frame due to keyboard
+    @objc func adjustForKeyboard(notification: Notification) {
+        let userInfo = notification.userInfo!
+        
+        let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
+        
+        if notification.name == Notification.Name.UIKeyboardWillHide {
+            viewScroller.contentInset = UIEdgeInsets.zero
+        } else {
+            viewScroller.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height, right: 0)
+        }
+        
+        viewScroller.scrollIndicatorInsets = viewScroller.contentInset
+    }
     
     //MARK: Actions
     
