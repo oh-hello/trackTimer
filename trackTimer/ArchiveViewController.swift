@@ -24,25 +24,24 @@ class ArchiveViewController: UIViewController, UITableViewDelegate, UITableViewD
         return cell
     }
     
+    //MARK: Navigation
+    
     internal func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         myIndex = indexPath.row
         performSegue(withIdentifier: "toRaceReportFromArchive", sender: self)
+    }
+    
+    @IBAction func backButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "toViewControllerFromArchive", sender: sender)
     }
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         super.prepare(for: segue, sender: sender)
         
-        switch segue.destination{
-        case is ViewController:
-            back(sender as Any)
-        default:
+        if segue.identifier == "toRaceReportFromArchive" {
             let destination = segue.destination as? RaceReportViewController
             destination!.race = allRaces[myIndex]
         }
-    }
-    
-    @IBAction func back(_ sender: Any){
-        dismiss(animated: false, completion: nil)
     }
     
     
