@@ -92,7 +92,6 @@ class RunnerControl: UIStackView, UITextFieldDelegate{
     //MARK: Public Methods
     
     func updateNumberOfTextfields(_ number: Int){
-        print(number)
         self.setupTextFields(number)
     }
 
