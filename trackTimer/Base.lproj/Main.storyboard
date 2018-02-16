@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -114,16 +116,23 @@
                                 <fontDescription key="fontDescription" name="FjallaOne-Regular" family="Fjalla One" pointSize="21"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <action selector="back:" destination="sUK-l6-m5X" eventType="touchUpInside" id="GKd-6E-T0w"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="toViewControllerFromArchive" animates="NO" id="6Ao-Id-QDI"/>
+                                    <action selector="backButtonPressed:" destination="sUK-l6-m5X" eventType="touchUpInside" id="ZNk-6m-yue"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Archive" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wy3-Tc-kbm">
+                                <rect key="frame" x="435" y="32" width="154" height="101"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="FjallaOne-Regular" family="Fjalla One" pointSize="45"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="archiveTable" destination="4n4-Av-KSU" id="W3W-k9-a9M"/>
                         <segue destination="BvG-YP-gac" kind="show" identifier="toRaceReportFromArchive" animates="NO" id="fwJ-hP-RrE"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="toViewControllerFromArchive" animates="NO" id="UzL-dq-V7Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhv-7h-WyV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -412,7 +421,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="segue" animates="NO" id="JFf-hQ-Fli"/>
+                                    <action selector="backToArchive:" destination="BvG-YP-gac" eventType="touchUpInside" id="R3H-jV-xOy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -440,12 +449,12 @@
                         <outlet property="locationLabel" destination="dUO-PO-96G" id="fWk-mY-6dS"/>
                         <outlet property="reportScroll" destination="5T8-wo-hc9" id="2hF-JS-4fi"/>
                         <outlet property="timeReportStack" destination="dKt-Hh-6yU" id="o9r-gk-z6V"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="toMainFromReport" animates="NO" id="QRo-nv-iWk"/>
+                        <segue destination="sUK-l6-m5X" kind="show" identifier="toArchiveFromReport" animates="NO" id="MR4-ny-bDg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ixk-5I-FQU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="998.43749999999989" y="890.625"/>
+            <point key="canvasLocation" x="785" y="768"/>
         </scene>
     </scenes>
     <resources>
@@ -453,6 +462,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fwJ-hP-RrE"/>
-        <segue reference="6Ao-Id-QDI"/>
+        <segue reference="MR4-ny-bDg"/>
+        <segue reference="UzL-dq-V7Z"/>
     </inferredMetricsTieBreakers>
 </document>

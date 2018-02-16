@@ -88,4 +88,10 @@ class RaceReportViewController: UIViewController {
             timeReportStack.addArrangedSubview(horizontalStack)
         }
     }
+    
+    //MARK: Navigation
+    @IBAction func backToArchive(_ sender: Any) {
+        performSegue(withIdentifier: "toArchiveFromReport", sender: sender)
+    }
+    
 }

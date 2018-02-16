@@ -118,9 +118,14 @@ class MasterTimerViewController: UIViewController {
             buttonArray.append(lap)
             buttonArray.append(stop)
             
-            //add event listeners
+            //add event listeners for touch up inside
             lap.addTarget(self, action: #selector(lapButtonPressed),for: .touchUpInside)
             stop.addTarget(self, action: #selector(stopButtonPressed), for: .touchUpInside)
+            
+            //add event listeners for touch enters
+            lap.addTarget(self, action: #selector(lapButtonTouched), for: .touchDown)
+            lap.addTarget(self, action: #selector(lapButtonTouched), for: .touchDragEnter)
+            lap.addTarget(self, action: #selector(lapTouchExit), for: .touchDragExit)
             
             //Create horizontal stack
             let subArray = [UIView]()
@@ -161,6 +166,14 @@ class MasterTimerViewController: UIViewController {
     func lapButtonPressed(sender: LapButton){
         sender.callToLap()
         print("Lap Button Pressed from MasterTimer")
+    }
+    
+    func lapButtonTouched(sender: LapButton){
+        sender.changeLapColor()
+    }
+    
+    func lapTouchExit(sender: LapButton) {
+        sender.revertLapColor()
     }
     
     func stopButtonPressed(sender: StopButton){
