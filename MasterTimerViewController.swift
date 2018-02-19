@@ -67,7 +67,7 @@ class MasterTimerViewController: UIViewController {
         startAll.isEnabled = false
     }
 
-    func runTimer(){
+    @objc func runTimer(){
         let currentTime = NSDate.timeIntervalSinceReferenceDate
         var elapsedTime: TimeInterval = currentTime - startTime
         let minutes = UInt8(elapsedTime / 60.0)
@@ -163,20 +163,20 @@ class MasterTimerViewController: UIViewController {
         
     }
     
-    func lapButtonPressed(sender: LapButton){
+    @objc func lapButtonPressed(sender: LapButton){
         sender.callToLap()
         print("Lap Button Pressed from MasterTimer")
     }
     
-    func lapButtonTouched(sender: LapButton){
+    @objc func lapButtonTouched(sender: LapButton){
         sender.changeLapColor()
     }
     
-    func lapTouchExit(sender: LapButton) {
+    @objc func lapTouchExit(sender: LapButton) {
         sender.revertLapColor()
     }
     
-    func stopButtonPressed(sender: StopButton){
+    @objc func stopButtonPressed(sender: StopButton){
         sender.callToStop()
         print("Stop Button Pressed")
         sender.disableButtons()
