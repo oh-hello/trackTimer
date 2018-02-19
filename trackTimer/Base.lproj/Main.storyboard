@@ -113,7 +113,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JgX-XJ-63A">
                                 <rect key="frame" x="20" y="20" width="111" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="FjallaOne-Regular" family="Fjalla One" pointSize="21"/>
+                                <fontDescription key="fontDescription" name="FjallaOne-Regular" family="Fjalla One" pointSize="25"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <action selector="backButtonPressed:" destination="sUK-l6-m5X" eventType="touchUpInside" id="ZNk-6m-yue"/>
@@ -419,6 +419,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Is-Mr-Xld">
                                 <rect key="frame" x="20" y="51" width="70" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="FjallaOne-Regular" family="Fjalla One" pointSize="25"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <action selector="backToArchive:" destination="BvG-YP-gac" eventType="touchUpInside" id="R3H-jV-xOy"/>
