@@ -11,23 +11,30 @@ import UIKit
 var myIndex = 0
 
 class ArchiveViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    var sortedRaces = [Race]()
+
     @IBOutlet weak var archiveTable: UITableView!
     
-    func sortRaces(){
-        sortedRaces = allRaces.reversed()
-    }
     
     //MARK: Private Functions
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sortedRaces.count
+        return allRaces.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = sortedRaces[indexPath.row].date + " " + sortedRaces[indexPath.row].location + " " + sortedRaces[indexPath.row].distance!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+        cell.textLabel?.text = allRaces[indexPath.row].date + " " + allRaces[indexPath.row].location + " " + allRaces[indexPath.row].distance!
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            allRaces.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
+    let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (rowAction: UITableViewRowAction, indexPath: IndexPath) -> Void in
+        
     }
     
     //MARK: Navigation
@@ -45,7 +52,7 @@ class ArchiveViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         if segue.identifier == "toRaceReportFromArchive" {
             let destination = segue.destination as? RaceReportViewController
-            destination!.race = sortedRaces[myIndex]
+            destination!.race = allRaces[myIndex]
         }
     }
     
@@ -55,7 +62,6 @@ class ArchiveViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        sortRaces()
     }
  
     
