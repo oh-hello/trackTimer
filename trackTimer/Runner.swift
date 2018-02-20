@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Runner {
+class Runner: Codable {
     
     //MARK: Properties
     
@@ -42,6 +42,13 @@ class Runner {
         //initialize Properties
         self.nameFirst = nameFirst
         self.nameLast = nameLast
+    }
+    
+    //MARK: Codable adjustments
+    private enum CodingKeys: String, CodingKey {
+        case nameFirst
+        case nameLast
+        case runnerTimesFormatted
     }
     
     //MARK: Methods

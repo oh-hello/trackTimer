@@ -9,7 +9,7 @@
 import UIKit
 import os.log
 
-class Race {
+class Race: Codable {
     
     //MARK: Properties
     

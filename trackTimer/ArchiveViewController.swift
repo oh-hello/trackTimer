@@ -25,8 +25,10 @@ class ArchiveViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //create cells
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = sortedRaces[indexPath.row].date + " " + sortedRaces[indexPath.row].location + " " + sortedRaces[indexPath.row].distance!
+        cell.textLabel?.font = UIFont(name: "OpenSans-Bold", size: 30)
         return cell
     }
     
