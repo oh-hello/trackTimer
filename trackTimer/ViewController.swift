@@ -24,6 +24,8 @@ class ViewController: UIViewController {
         let jsonDecoder = JSONDecoder()
         do {
             allRaces = try jsonDecoder.decode([Race].self, from: jsonData)
+            let jsonString = String(data: jsonData, encoding: .utf8)
+            print("JSON String : " + jsonString!)
         }
         catch {
         }
