@@ -16,25 +16,26 @@ class ArchiveViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     
     //MARK: Private Functions
+    //sets numbers of rows that the table has
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return allRaces.count
     }
     
+    //creates cells and how the cell is named
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         cell.textLabel?.text = allRaces[indexPath.row].date + " " + allRaces[indexPath.row].location + " " + allRaces[indexPath.row].distance!
         return cell
     }
     
+    //deletes cells
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             allRaces.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-    
-    let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (rowAction: UITableViewRowAction, indexPath: IndexPath) -> Void in
-        
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (rowAction: UITableViewRowAction, indexPath: IndexPath) -> Void in
     }
     
     //MARK: Navigation
@@ -63,6 +64,4 @@ class ArchiveViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad(){
         super.viewDidLoad()
     }
- 
-    
 }
