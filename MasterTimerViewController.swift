@@ -204,6 +204,19 @@ class MasterTimerViewController: UIViewController {
             
         //append current race to global race array
         allRaces.insert(race!, at: 0)
+       
+        // Encode data
+        let jsonEncoder = JSONEncoder()
+        do {
+            let jsonData = try jsonEncoder.encode(allRaces)
+            let jsonString = String(data: jsonData, encoding: .utf8)
+            print("JSON String : " + jsonString!)
+            //save data
+            NSKeyedArchiver.archiveRootObject(jsonData, toFile: fileFolder)
+        }
+        catch {
+        }
+        
         let destination = segue.destination as? RaceReportViewController
         destination!.race = self.race
         }

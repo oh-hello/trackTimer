@@ -10,3 +10,11 @@ import Foundation
 import UIKit
 
 var allRaces = [Race]()
+
+//creates file name for saving races
+var fileFolder: String {
+    
+    let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    
+    return DocumentsDirectory.appendingPathComponent("trackTimerSaveFolder").path
+}
