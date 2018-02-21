@@ -19,13 +19,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Decode data
-        guard let jsonData = NSKeyedUnarchiver.unarchiveObject(withFile: "file") as? Data else { return }
+        //load data
+        guard let jsonData = NSKeyedUnarchiver.unarchiveObject(withFile: fileFolder) as? Data else { return }
         let jsonDecoder = JSONDecoder()
         do {
+            // Decode data
             allRaces = try jsonDecoder.decode([Race].self, from: jsonData)
-            let jsonString = String(data: jsonData, encoding: .utf8)
-            print("JSON String : " + jsonString!)
         }
         catch {
         }

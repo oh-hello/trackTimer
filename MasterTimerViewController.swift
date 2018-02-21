@@ -204,13 +204,15 @@ class MasterTimerViewController: UIViewController {
             
         //append current race to global race array
         allRaces.append(race!)
+       
         // Encode data
         let jsonEncoder = JSONEncoder()
         do {
             let jsonData = try jsonEncoder.encode(allRaces)
             let jsonString = String(data: jsonData, encoding: .utf8)
             print("JSON String : " + jsonString!)
-            NSKeyedArchiver.archiveRootObject(jsonData, toFile: "file")
+            //save data
+            NSKeyedArchiver.archiveRootObject(jsonData, toFile: fileFolder)
         }
         catch {
         }
