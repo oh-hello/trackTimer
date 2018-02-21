@@ -21,10 +21,8 @@ class ArchiveViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //create cells
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = sortedRaces[indexPath.row].date + " " + sortedRaces[indexPath.row].location + " " + sortedRaces[indexPath.row].distance!
-        cell.textLabel?.font = UIFont(name: "OpenSans-Bold", size: 30)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+        cell.textLabel?.text = allRaces[indexPath.row].date + " " + allRaces[indexPath.row].location + " " + allRaces[indexPath.row].distance!
         return cell
     }
     
@@ -32,6 +30,18 @@ class ArchiveViewController: UIViewController, UITableViewDelegate, UITableViewD
         if editingStyle == .delete {
             allRaces.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            //remove race from persistent archive
+            let jsonEncoder = JSONEncoder()
+            do {
+                let jsonData = try jsonEncoder.encode(allRaces)
+                let jsonString = String(data: jsonData, encoding: .utf8)
+                print("JSON String : " + jsonString!)
+                //save data
+                NSKeyedArchiver.archiveRootObject(jsonData, toFile: fileFolder)
+            }
+            catch {
+            }
         }
     }
     

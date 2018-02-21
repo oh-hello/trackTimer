@@ -203,7 +203,7 @@ class MasterTimerViewController: UIViewController {
         default:
             
         //append current race to global race array
-        allRaces.append(race!)
+        allRaces.insert(race!, at: 0)
        
         // Encode data
         let jsonEncoder = JSONEncoder()
