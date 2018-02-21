@@ -11,17 +11,13 @@ import UIKit
 var myIndex = 0
 
 class ArchiveViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    var sortedRaces = [Race]()
+
     @IBOutlet weak var archiveTable: UITableView!
     
-    func sortRaces(){
-        sortedRaces = allRaces.reversed()
-    }
     
     //MARK: Private Functions
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sortedRaces.count
+        return allRaces.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -30,6 +26,17 @@ class ArchiveViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.textLabel?.text = sortedRaces[indexPath.row].date + " " + sortedRaces[indexPath.row].location + " " + sortedRaces[indexPath.row].distance!
         cell.textLabel?.font = UIFont(name: "OpenSans-Bold", size: 30)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            allRaces.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
+    let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (rowAction: UITableViewRowAction, indexPath: IndexPath) -> Void in
+        
     }
     
     //MARK: Navigation
@@ -47,7 +54,7 @@ class ArchiveViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         if segue.identifier == "toRaceReportFromArchive" {
             let destination = segue.destination as? RaceReportViewController
-            destination!.race = sortedRaces[myIndex]
+            destination!.race = allRaces[myIndex]
         }
     }
     
@@ -57,7 +64,6 @@ class ArchiveViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        sortRaces()
     }
  
     
