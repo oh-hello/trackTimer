@@ -45,7 +45,6 @@ class StopButton: UIButton {
         runner.lapLapTimer()
         runner.stopLapTimer()
         runner.getTotalTime()
-        print("timer stopped")
     }
     
     func disableButtons() {

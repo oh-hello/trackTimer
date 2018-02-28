@@ -43,7 +43,6 @@ class LapButton: UIButton {
     func callToLap(){
         runner.lapLapTimer()
         backgroundColor = defaultGreen
-        print("lap button pressed from LapButton")
     }
     
     func changeLapColor(){

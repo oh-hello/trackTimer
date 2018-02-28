@@ -56,7 +56,7 @@ class Runner: Codable {
     func startLapTimer(){
         if !lapTimer.isValid{
             let aSelector : Selector = #selector(Runner.updateLapTimer)
-            lapTimer = Timer.scheduledTimer(timeInterval: 0.10, target: self, selector: aSelector, userInfo: nil, repeats: true)
+            lapTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
         }
     }
     
@@ -97,13 +97,21 @@ class Runner: Codable {
         for element in runnerTimesDifference{
             var minutes = 0.0
             var seconds = 0.0
+            var milliSeconds = 0.0
             var minutesInt = Int()
             var secondsInt = Int()
+            var milliSecondsInt = Int()
             if element <= 60{
                 minutesInt = 0
                 seconds = element
                 seconds = round(100 * seconds) / 100
                 secondsInt = Int(seconds)
+                milliSeconds = abs(Double(secondsInt) - seconds)
+                milliSeconds = round(100 * milliSeconds) / 100
+                milliSeconds *= 100
+                milliSecondsInt = Int(milliSeconds)
+                print(milliSeconds)
+                print(milliSecondsInt)
             }
             else{
                 minutes = element / 60
@@ -112,14 +120,32 @@ class Runner: Codable {
                 seconds = (element - 60 * minutesDouble)
                 seconds = round(100 * seconds) / 100
                 secondsInt = Int(seconds)
+                milliSeconds = abs(Double(secondsInt) - seconds)
+                milliSeconds = round(100 * milliSeconds) / 100
+                milliSeconds *= 100
+                milliSecondsInt = Int(milliSeconds)
+                print(milliSeconds)
+                print(milliSecondsInt)
             }
             if secondsInt < 10 {
-                let time = "\(minutesInt):0\(secondsInt)"
-                runnerTimesFormatted.append(time)
+                if milliSeconds < 10 {
+                    let time = "\(minutesInt):0\(secondsInt):0\(milliSecondsInt)"
+                    runnerTimesFormatted.append(time)
+                }
+                else {
+                    let time = "\(minutesInt):0\(secondsInt):\(milliSecondsInt)"
+                    runnerTimesFormatted.append(time)
+                }
             }
             else{
-                let time = "\(minutesInt):\(secondsInt)"
-                runnerTimesFormatted.append(time)
+                if milliSeconds < 10 {
+                    let time = "\(minutesInt):\(secondsInt):0\(milliSecondsInt)"
+                    runnerTimesFormatted.append(time)
+                }
+                else {
+                    let time = "\(minutesInt):\(secondsInt):\(milliSecondsInt)"
+                    runnerTimesFormatted.append(time)
+                }
             }
         }
     }

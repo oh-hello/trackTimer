@@ -59,7 +59,7 @@ class MasterTimerViewController: UIViewController {
     @IBAction func startButton(_ sender: Any) {
         if !timer.isValid{
             let aSelector : Selector = #selector(MasterTimerViewController.runTimer)
-            timer = Timer.scheduledTimer(timeInterval: 0.10, target: self, selector: aSelector, userInfo:nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: aSelector, userInfo:nil, repeats: true)
             startTime = NSDate.timeIntervalSinceReferenceDate
         }
         enableButtons()
@@ -85,7 +85,6 @@ class MasterTimerViewController: UIViewController {
     func startLapTime(){
         for currentRunner in race!.runnerList{
             currentRunner.startLapTimer()
-            print("lap timer started")
         }
     }
 
@@ -165,7 +164,6 @@ class MasterTimerViewController: UIViewController {
     
     @objc func lapButtonPressed(sender: LapButton){
         sender.callToLap()
-        print("Lap Button Pressed from MasterTimer")
     }
     
     @objc func lapButtonTouched(sender: LapButton){
@@ -178,7 +176,6 @@ class MasterTimerViewController: UIViewController {
     
     @objc func stopButtonPressed(sender: StopButton){
         sender.callToStop()
-        print("Stop Button Pressed")
         sender.disableButtons()
         
         if checkButtonsDisabled() == true {

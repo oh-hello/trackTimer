@@ -43,8 +43,6 @@ class Race: Codable {
         self.location = tempLocation
         self.distance = distance
         self.runnerList = runnerList
-        
-        print("init successful")
     }
     
 }
