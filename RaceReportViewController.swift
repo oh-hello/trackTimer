@@ -89,6 +89,35 @@ class RaceReportViewController: UIViewController {
         }
     }
     
+    //MARK: Export
+    
+    @IBAction func export(_ sender: UIButton) {
+        let fileName = "\(race?.location ?? "practice")\(race?.distance ?? "").csv"
+        let path = NSURL(fileURLWithPath:NSTemporaryDirectory()).appendingPathComponent(fileName)
+        //call to create race csv
+        let raceCSV = createRaceCSV(race!)
+        print(raceCSV)
+        
+        //save the race csv file
+        do {
+            try raceCSV.write(to: path!, atomically: true, encoding: String.Encoding.utf8)
+        }
+        catch {
+            print("Failed to create file")
+            print("\(error)")
+        }
+        
+        //create activity popover
+        let activityView = UIActivityViewController(activityItems: [path!], applicationActivities:[])
+        //modify activities
+        activityView.excludedActivityTypes = [UIActivityType.assignToContact,UIActivityType.assignToContact,UIActivityType.saveToCameraRoll,UIActivityType.postToFlickr,UIActivityType.postToVimeo,UIActivityType.postToTencentWeibo,UIActivityType.postToTwitter,UIActivityType.postToFacebook,UIActivityType.openInIBooks]
+        //present popover
+        activityView.modalPresentationStyle = UIModalPresentationStyle.popover
+        present(activityView, animated: true, completion: nil)
+        let popOver = activityView.popoverPresentationController
+        popOver?.sourceView = sender
+    }
+    
     //MARK: Navigation
     @IBAction func backToArchive(_ sender: Any) {
         performSegue(withIdentifier: "toArchiveFromReport", sender: sender)
