@@ -129,21 +129,21 @@ class Runner: Codable {
             }
             if secondsInt < 10 {
                 if milliSeconds < 10 {
-                    let time = "\(minutesInt):0\(secondsInt):0\(milliSecondsInt)"
+                    let time = "\(minutesInt):0\(secondsInt).0\(milliSecondsInt)"
                     runnerTimesFormatted.append(time)
                 }
                 else {
-                    let time = "\(minutesInt):0\(secondsInt):\(milliSecondsInt)"
+                    let time = "\(minutesInt):0\(secondsInt).\(milliSecondsInt)"
                     runnerTimesFormatted.append(time)
                 }
             }
             else{
                 if milliSeconds < 10 {
-                    let time = "\(minutesInt):\(secondsInt):0\(milliSecondsInt)"
+                    let time = "\(minutesInt):\(secondsInt).0\(milliSecondsInt)"
                     runnerTimesFormatted.append(time)
                 }
                 else {
-                    let time = "\(minutesInt):\(secondsInt):\(milliSecondsInt)"
+                    let time = "\(minutesInt):\(secondsInt).\(milliSecondsInt)"
                     runnerTimesFormatted.append(time)
                 }
             }

@@ -78,7 +78,7 @@ class MasterTimerViewController: UIViewController {
         let strMinutes = String(format: "%02d", minutes)
         let strSeconds = String(format: "%02d", seconds)
         let strFraction = String(format: "%02d", fraction)
-        let displayTimeLabel = "\(strMinutes):\(strSeconds):\(strFraction)"
+        let displayTimeLabel = "\(strMinutes):\(strSeconds).\(strFraction)"
         masterTimerClock.text = displayTimeLabel
     }
     
