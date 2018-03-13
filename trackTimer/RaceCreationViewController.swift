@@ -19,10 +19,11 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
     @IBOutlet weak var locationField: UITextField!
     @IBOutlet weak var distanceField: UITextField!
     @IBOutlet weak var numberPicker: UIPickerView!
-    @IBOutlet weak var pickerTest: UILabel! //delete this outlet later
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var runController: RunnerControl!
+    @IBOutlet weak var relaySwitch: UISwitch!
+    @IBOutlet weak var numRunLabel: UILabel!
     
     //Race contstructed based on race info input by user
     var race: Race?
@@ -38,6 +39,9 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
         // Handle the text field’s user input through delegate callbacks
         locationField.delegate = self
         distanceField.delegate = self
+        
+        //add listener to switch
+        relaySwitch.addTarget(self, action: #selector(switchToggled(_:)), for: UIControlEvents.valueChanged)
         
         //manage keyboard changes
         let notificationCenter = NotificationCenter.default
@@ -89,6 +93,7 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
     {
         //Update runner initialization
         runController.updateNumberOfTextfields(pickerData[component][row])
+        
     }
     
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
@@ -99,6 +104,26 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
         return 50
     }
 
+    //MARK: Switch Manager
+    
+    @objc func switchToggled(_ sender: UISwitch){
+        switch relaySwitch.isOn {
+        case true:
+            //set numberPicker to 4
+            numberPicker.selectRow(3, inComponent: 0, animated: false)
+            pickerView(numberPicker, didSelectRow: 3, inComponent : 0)
+            numberPicker.isHidden = true
+            numRunLabel.isHidden = true
+        default:
+            //set numberPicker back to 1
+            numberPicker.selectRow(0, inComponent: 0, animated: false)
+            pickerView(numberPicker, didSelectRow: 0, inComponent : 0)
+            numberPicker.isHidden = false
+            numRunLabel.isHidden = false
+        }
+    }
+    
+    
     
     //MARK: UITextFieldDelegate
     
@@ -128,7 +153,6 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
         viewScroller.scrollIndicatorInsets = viewScroller.contentInset
     }
     
-    //MARK: Actions
     
     //MARK: Private Methods
    
