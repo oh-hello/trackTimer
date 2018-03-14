@@ -60,6 +60,11 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
         dateFormatter.dateStyle = .short
         dateLabel.text = dateFormatter.string(from: currentDate as Date)
         
+        //correct format from relay if race is cancelled
+        relaySwitch.isOn = false
+        numRunLabel.isHidden = false
+        numberPicker.isHidden = false
+        
         //Set default picker value and RunnerControl Fields when view loads
         numberPicker.selectRow(0, inComponent: 0, animated: false)
         runController.updateNumberOfTextfields(pickerData[0][numberPicker.selectedRow(inComponent:0)])
@@ -156,8 +161,8 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
     
     //MARK: Private Methods
    
-    func createRace(_ date: String, _ location: String, _ distance: String, _ runnerList: Array<Runner>)  {
-        race = Race(date: date, location: location, distance: distance, runnerList: runnerList)
+    func createRace(_ date: String, _ location: String, _ distance: String, _ runnerList: Array<Runner>, _ relay: Bool)  {
+        race = Race(date: date, location: location, distance: distance, runnerList: runnerList, relay: relay)
     }
     
     func createRunners() -> Array<Runner> {
@@ -219,7 +224,7 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
         let date = dateLabel.text
         let location = locationField.text
         let distance = distanceField.text
-        createRace(date!, location!, distance!, runnerList)
+        createRace(date!, location!, distance!, runnerList, relaySwitch.isOn)
         
         //check nil race of perform segue
         switch race{

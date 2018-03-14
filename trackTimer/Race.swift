@@ -17,10 +17,11 @@ class Race: Codable {
     var location: String
     var distance: String?
     var runnerList = [Runner]()
+    var relay: Bool
     
     
     //MARK: Initialization
-    init?(date: String, location: String, distance: String?, runnerList: Array<Runner>){
+    init?(date: String, location: String, distance: String?, runnerList: Array<Runner>, relay: Bool){
         
         //Date must not be empty
         guard !date.isEmpty else {
@@ -43,6 +44,9 @@ class Race: Codable {
         self.location = tempLocation
         self.distance = distance
         self.runnerList = runnerList
+        self.relay = relay
+        
+        print(relay)
     }
     
 }
