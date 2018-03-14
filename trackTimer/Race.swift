@@ -17,7 +17,10 @@ class Race: Codable {
     var location: String
     var distance: String?
     var runnerList = [Runner]()
+    
+    // Relay specific properties
     var relay: Bool
+    var totalDuration = ""
     
     
     //MARK: Initialization

@@ -198,6 +198,10 @@ class MasterTimerViewController: UIViewController {
         case is RaceCreationViewController:
             cancel(sender as Any)
         default:
+        //set race duration if it is a relay
+            if race!.relay {
+                race!.totalDuration = masterTimerClock.text!
+            }
             
         //append current race to global race array
         allRaces.insert(race!, at: 0)
