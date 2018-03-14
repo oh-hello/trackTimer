@@ -37,6 +37,11 @@ class MasterTimerViewController: UIViewController {
         startAll.layer.borderWidth = 2
         startAll.layer.cornerRadius = 10
         
+        //format start all button for relay
+        if race!.relay {
+            startAll.setTitle("Start", for: UIControlState.normal)
+        }
+        
         //disable save button
         saveRace.isEnabled = false
         

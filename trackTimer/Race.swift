@@ -49,7 +49,6 @@ class Race: Codable {
         self.runnerList = runnerList
         self.relay = relay
         
-        print(relay)
     }
     
 }
