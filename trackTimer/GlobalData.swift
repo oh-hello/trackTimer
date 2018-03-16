@@ -34,3 +34,7 @@ func createRaceCSV(_ race: Race) -> String {
     
     return csv
 }
+
+//color constants
+let stopColor = UIColor(red: 230/255, green: 184/255, blue: 175/255, alpha: 1.0)
+let lapColor = UIColor(red: 182/255, green: 215/255, blue: 168/255, alpha: 1.0)

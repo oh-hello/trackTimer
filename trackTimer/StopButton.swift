@@ -20,12 +20,11 @@ class StopButton: UIButton {
         self.lap = lap
         super.init(frame: .zero)
         
-        backgroundColor = UIColor(red: 230/255, green: 184/255, blue: 175/255, alpha: 1.0)
+        backgroundColor = UIColor.lightGray
         layer.cornerRadius = 20
         setTitle("Stop", for: UIControlState.normal)
         titleLabel?.font = UIFont(name: "FjallaOne-Regular", size: 30)
         setTitleColor(UIColor.black, for: UIControlState.normal)
-        setTitleColor(UIColor.lightGray, for: UIControlState.highlighted)
         layer.borderWidth = 2
         frame.size = CGSize(width: 60, height: 50)
         
@@ -41,7 +40,7 @@ class StopButton: UIButton {
     }
     
     //MARK: Private Functions
-    func callToStop(){
+    func callToStop(race: Race){
         runner.lapLapTimer()
         runner.stopLapTimer()
         runner.getTotalTime()
@@ -51,6 +50,7 @@ class StopButton: UIButton {
         lap.isEnabled = false
         lap.backgroundColor = UIColor.lightGray
         isEnabled = false
+        backgroundColor = UIColor.lightGray
     }
 
 }

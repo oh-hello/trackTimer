@@ -12,7 +12,7 @@ class LapButton: UIButton {
     
     //MARK: Properties
     let runner:Runner
-    let defaultGreen = UIColor(red: 182/255, green: 215/255, blue: 168/255, alpha: 1.0)
+    let defaultGreen = UIColor.lightGray
     //MARK: Initialization
     required init(run: Runner) {
         runner = run

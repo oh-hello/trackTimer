@@ -88,8 +88,13 @@ class MasterTimerViewController: UIViewController {
     }
     
     func startLapTime(){
-        for currentRunner in race!.runnerList{
-            currentRunner.startLapTimer()
+        switch race!.relay {
+        case true:
+            race!.runnerList[0].startLapTimer()
+        default:
+            for currentRunner in race!.runnerList{
+                currentRunner.startLapTimer()
+            }
         }
     }
 
@@ -161,10 +166,40 @@ class MasterTimerViewController: UIViewController {
     //MARK: Actions
     
     func enableButtons() {
-        for button in buttonArray {
-            button.isEnabled = true
+        switch race!.relay {
+        case true:
+            buttonArray[0].isEnabled = true
+            buttonArray[0].backgroundColor = lapColor
+            buttonArray[1].isEnabled = true
+            buttonArray[1].backgroundColor = stopColor
+        default:
+            
+            for button in buttonArray {
+                button.isEnabled = true
+                if button is LapButton {
+                    button.backgroundColor = lapColor
+                }
+                else {
+                    button.backgroundColor = stopColor
+                }
+            }
+        }
+    }
+    
+    //Cycle active runner in relay
+    func enableNextButtons(_ index: Int, _ previousButton: StopButton) {
+        if index == buttonArray.count - 1 {
+           return
         }
         
+        //change color for active buttons
+        buttonArray[index + 1].isEnabled = true
+        buttonArray[index + 1].backgroundColor = lapColor
+        buttonArray[index + 2].isEnabled = true
+        buttonArray[index + 2].backgroundColor = stopColor
+        
+        //start next runner timer
+        race!.runnerList[(index/2) + 1].startLapTimer()
     }
     
     @objc func lapButtonPressed(sender: LapButton){
@@ -180,8 +215,12 @@ class MasterTimerViewController: UIViewController {
     }
     
     @objc func stopButtonPressed(sender: StopButton){
-        sender.callToStop()
+        sender.callToStop(race: race!)
         sender.disableButtons()
+        
+        if race!.relay{
+            enableNextButtons(buttonArray.index(of: sender)!, sender)
+        }
         
         if checkButtonsDisabled() == true {
             timer.invalidate()
