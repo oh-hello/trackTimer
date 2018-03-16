@@ -187,7 +187,7 @@ class MasterTimerViewController: UIViewController {
     }
     
     //Cycle active runner in relay
-    func enableNextButtons(_ index: Int, _ previousButton: StopButton) {
+    func enableNextButtons(_ index: Int) {
         if index == buttonArray.count - 1 {
            return
         }
@@ -219,7 +219,7 @@ class MasterTimerViewController: UIViewController {
         sender.disableButtons()
         
         if race!.relay{
-            enableNextButtons(buttonArray.index(of: sender)!, sender)
+            enableNextButtons(buttonArray.index(of: sender)!)
         }
         
         if checkButtonsDisabled() == true {
