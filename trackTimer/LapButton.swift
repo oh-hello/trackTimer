@@ -12,13 +12,12 @@ class LapButton: UIButton {
     
     //MARK: Properties
     let runner:Runner
-    let defaultGreen = UIColor.lightGray
     //MARK: Initialization
     required init(run: Runner) {
         runner = run
         super.init(frame: .zero)
         
-        backgroundColor = defaultGreen
+        backgroundColor = UIColor.lightGray
         layer.cornerRadius = 20
         setTitle("Lap", for: UIControlState.normal)
         titleLabel?.font = UIFont(name: "FjallaOne-Regular", size: 30)
@@ -42,7 +41,7 @@ class LapButton: UIButton {
     //MARK: Private Functions
     func callToLap(){
         runner.lapLapTimer()
-        backgroundColor = defaultGreen
+        backgroundColor = lapColor
     }
     
     func changeLapColor(){
@@ -50,6 +49,6 @@ class LapButton: UIButton {
     }
     
     func revertLapColor() {
-        backgroundColor = defaultGreen
+        backgroundColor = lapColor
     }
 }
