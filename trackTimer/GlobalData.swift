@@ -21,15 +21,20 @@ var fileFolder: String {
 
 //create a csv file for a race
 func createRaceCSV(_ race: Race) -> String {
-    var csv = "\(race.date),\(race.location),\(race.distance ?? "")\n"
+    var csv = "\(race.date),\(race.location),\(race.distance ?? "")"
+    
+    //additional relay information
+    if race.relay {
+        csv.append(",\(race.totalDuration)")
+    }
     
     //loop to make csv
     for x in 0..<race.runnerList.count {
+        csv.append("\n")
         csv.append("\(race.runnerList[x].nameFirst) \(race.runnerList[x].nameLast ?? ""),")
         for time in race.runnerList[x].runnerTimesFormatted {
             csv.append("\(time),")
         }
-        csv.append("\n")
     }
     
     return csv
