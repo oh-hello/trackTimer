@@ -105,7 +105,7 @@ class RaceReportViewController: UIViewController {
     //MARK: Export
     
     @IBAction func export(_ sender: UIButton) {
-        let fileName = "\(race?.location ?? "practice")\(race?.distance ?? "").csv"
+        let fileName = "\(race?.location ?? "practice") \(race?.distance ?? "").csv"
         let path = NSURL(fileURLWithPath:NSTemporaryDirectory()).appendingPathComponent(fileName)
         //call to create race csv
         let raceCSV = createRaceCSV(race!)
