@@ -17,6 +17,8 @@ class RaceReportViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     
     var race: Race?
     
@@ -29,6 +31,17 @@ class RaceReportViewController: UIViewController {
         dateLabel.text = race?.date
         locationLabel.text = race?.location
         distanceLabel.text = race?.distance
+        
+        //set up relay duration labels
+        switch race!.relay {
+        case true:
+            totalLabel.isHidden = false
+            timeLabel.isHidden = false
+            timeLabel.text = race!.totalDuration
+        default:
+            totalLabel.isHidden = true
+            timeLabel.isHidden = true
+        }
         
         reportScroll.contentInset.left = 20.0
         

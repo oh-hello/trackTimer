@@ -400,12 +400,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5T8-wo-hc9">
-                                <rect key="frame" x="112" y="116" width="800" height="601"/>
+                                <rect key="frame" x="112" y="178" width="800" height="550"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dKt-Hh-6yU">
-                                        <rect key="frame" x="0.0" y="-1" width="800" height="600"/>
+                                        <rect key="frame" x="0.0" y="-1" width="800" height="550"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="600" id="pSu-Za-8tM"/>
+                                            <constraint firstAttribute="height" constant="550" id="pSu-Za-8tM"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="800" id="x6w-dP-ye2"/>
                                         </constraints>
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
@@ -417,7 +417,7 @@
                                     <constraint firstAttribute="width" constant="800" id="anc-Y2-U6e"/>
                                     <constraint firstItem="dKt-Hh-6yU" firstAttribute="top" secondItem="5T8-wo-hc9" secondAttribute="top" constant="-1" id="fLE-66-n4i"/>
                                     <constraint firstItem="dKt-Hh-6yU" firstAttribute="leading" secondItem="5T8-wo-hc9" secondAttribute="leading" id="hFJ-ih-AxZ"/>
-                                    <constraint firstAttribute="bottom" secondItem="dKt-Hh-6yU" secondAttribute="bottom" constant="2" id="lJc-Gw-Ucb"/>
+                                    <constraint firstAttribute="bottom" secondItem="dKt-Hh-6yU" secondAttribute="bottom" constant="1" id="lJc-Gw-Ucb"/>
                                 </constraints>
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5e-tk-UPP">
@@ -448,20 +448,34 @@
                                     <action selector="backToArchive:" destination="BvG-YP-gac" eventType="touchUpInside" id="R3H-jV-xOy"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Race Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwn-lU-DWK">
+                                <rect key="frame" x="112" y="130" width="170" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="FjallaOne-Regular" family="Fjalla One" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EN0-Pa-ctk">
+                                <rect key="frame" x="742" y="130" width="170" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="FjallaOne-Regular" family="Fjalla One" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dUO-PO-96G" firstAttribute="firstBaseline" secondItem="hMx-rl-E0B" secondAttribute="firstBaseline" id="1UX-zg-nJC"/>
                             <constraint firstItem="dUO-PO-96G" firstAttribute="leading" secondItem="hMx-rl-E0B" secondAttribute="trailing" id="7LO-UO-W5r"/>
                             <constraint firstItem="X5e-tk-UPP" firstAttribute="firstBaseline" secondItem="hMx-rl-E0B" secondAttribute="firstBaseline" id="D7X-8h-XxU"/>
-                            <constraint firstItem="5T8-wo-hc9" firstAttribute="top" secondItem="dUO-PO-96G" secondAttribute="bottom" constant="19" id="QFH-tM-6W2"/>
-                            <constraint firstItem="5T8-wo-hc9" firstAttribute="top" secondItem="zhA-69-gQp" secondAttribute="top" constant="116" id="SE5-yD-MSu"/>
+                            <constraint firstItem="5T8-wo-hc9" firstAttribute="top" secondItem="dUO-PO-96G" secondAttribute="bottom" constant="81" id="QFH-tM-6W2"/>
+                            <constraint firstItem="5T8-wo-hc9" firstAttribute="top" secondItem="zhA-69-gQp" secondAttribute="top" constant="178" id="SE5-yD-MSu"/>
                             <constraint firstItem="hMx-rl-E0B" firstAttribute="leading" secondItem="X5e-tk-UPP" secondAttribute="trailing" id="YbA-4P-aoI"/>
                             <constraint firstItem="X5e-tk-UPP" firstAttribute="leading" secondItem="zhA-69-gQp" secondAttribute="leadingMargin" constant="92" id="g4t-dS-RwH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dUO-PO-96G" secondAttribute="trailing" constant="92" id="gVK-My-Z3k"/>
                             <constraint firstItem="dUO-PO-96G" firstAttribute="top" secondItem="OIb-dE-ls9" secondAttribute="bottom" constant="22" id="h2I-rX-F1Y"/>
                             <constraint firstItem="X5e-tk-UPP" firstAttribute="baseline" secondItem="hMx-rl-E0B" secondAttribute="baseline" id="hay-AK-MQy"/>
-                            <constraint firstItem="FVs-tl-dL9" firstAttribute="top" secondItem="5T8-wo-hc9" secondAttribute="bottom" constant="51" id="iiC-Bq-wVt"/>
+                            <constraint firstItem="FVs-tl-dL9" firstAttribute="top" secondItem="5T8-wo-hc9" secondAttribute="bottom" constant="40" id="iiC-Bq-wVt"/>
                             <constraint firstItem="X5e-tk-UPP" firstAttribute="leading" secondItem="5T8-wo-hc9" secondAttribute="leading" id="pot-2r-4Zh"/>
                             <constraint firstItem="5T8-wo-hc9" firstAttribute="trailing" secondItem="dUO-PO-96G" secondAttribute="trailing" id="stP-8X-ywU"/>
                             <constraint firstItem="dUO-PO-96G" firstAttribute="baseline" secondItem="hMx-rl-E0B" secondAttribute="baseline" id="whU-iA-MCC"/>
@@ -472,7 +486,9 @@
                         <outlet property="distanceLabel" destination="hMx-rl-E0B" id="MvM-rR-y3A"/>
                         <outlet property="locationLabel" destination="dUO-PO-96G" id="fWk-mY-6dS"/>
                         <outlet property="reportScroll" destination="5T8-wo-hc9" id="2hF-JS-4fi"/>
+                        <outlet property="timeLabel" destination="EN0-Pa-ctk" id="nnd-K2-ceE"/>
                         <outlet property="timeReportStack" destination="dKt-Hh-6yU" id="o9r-gk-z6V"/>
+                        <outlet property="totalLabel" destination="cwn-lU-DWK" id="oLM-ec-rwJ"/>
                         <segue destination="sUK-l6-m5X" kind="show" identifier="toArchiveFromReport" animates="NO" id="MR4-ny-bDg"/>
                     </connections>
                 </viewController>
