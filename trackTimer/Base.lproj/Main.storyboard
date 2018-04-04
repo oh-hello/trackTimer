@@ -132,7 +132,6 @@
                                 <fontDescription key="fontDescription" name="FjallaOne-Regular" family="Fjalla One" pointSize="25"/>
                                 <state key="normal" title="Export All Races"/>
                                 <connections>
-                                    <action selector="backButtonPressed:" destination="sUK-l6-m5X" eventType="touchUpInside" id="fgh-y4-e7e"/>
                                     <action selector="exportAllRaces:" destination="sUK-l6-m5X" eventType="touchUpInside" id="AVu-AQ-mO2"/>
                                 </connections>
                             </button>

@@ -54,7 +54,39 @@ class ArchiveViewController: UIViewController, UITableViewDelegate, UITableViewD
     //MARK: Actions
     
     @IBAction func exportAllRaces(_ sender: UIButton) {
+        print("export called")
         
+        let currentDate = NSDate()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.locale = NSLocale.current
+        
+        let fileName = "All Race Export \(dateFormatter.string(from: currentDate as Date)).csv"
+        let path = NSURL(fileURLWithPath:NSTemporaryDirectory()).appendingPathComponent(fileName)
+        
+        //call to create race csv
+        let allRacesCSV = createAllRacesCSV()
+        print(allRacesCSV)
+        
+        //save the race csv file
+        do {
+            try allRacesCSV.write(to: path!, atomically: true, encoding: String.Encoding.utf8)
+        }
+        catch {
+            print("Failed to create file")
+            print("\(error)")
+        }
+        
+        //create activity popover
+        let archiveActivityView = UIActivityViewController(activityItems: [path!], applicationActivities:[])
+        //modify activities
+        archiveActivityView.excludedActivityTypes = [UIActivityType.assignToContact,UIActivityType.assignToContact,UIActivityType.saveToCameraRoll,UIActivityType.postToFlickr,UIActivityType.postToVimeo,UIActivityType.postToTencentWeibo,UIActivityType.postToTwitter,UIActivityType.postToFacebook,UIActivityType.openInIBooks]
+        //present popover
+        archiveActivityView.modalPresentationStyle = UIModalPresentationStyle.popover
+        present(archiveActivityView, animated: true, completion: nil)
+        let popOver = archiveActivityView.popoverPresentationController
+        popOver?.sourceView = sender
+        popOver?.permittedArrowDirections = []
     }
     
     //MARK: Navigation
