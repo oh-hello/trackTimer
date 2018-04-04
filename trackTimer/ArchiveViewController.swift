@@ -15,7 +15,7 @@ class ArchiveViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var archiveTable: UITableView!
     
     
-    //MARK: Private Functions
+    //MARK: Table Functions
     //sets numbers of rows that the table has
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return allRaces.count
@@ -49,6 +49,12 @@ class ArchiveViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
         let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (rowAction: UITableViewRowAction, indexPath: IndexPath) -> Void in
+    }
+    
+    //MARK: Actions
+    
+    @IBAction func exportAllRaces(_ sender: UIButton) {
+        
     }
     
     //MARK: Navigation
