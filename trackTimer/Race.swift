@@ -17,6 +17,7 @@ class Race: Codable {
     var location: String
     var distance: String?
     var runnerList = [Runner]()
+    var completed = false
     
     // Relay specific properties
     var relay: Bool
@@ -51,4 +52,11 @@ class Race: Codable {
         
     }
     
+}
+
+//custom comparison behavior
+extension Race: Equatable {
+    static func == (lhs: Race, rhs: Race) -> Bool {
+        return lhs.date == rhs.date && lhs.location == rhs.location && lhs.runnerList == rhs.runnerList
+    }
 }

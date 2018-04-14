@@ -242,28 +242,27 @@ class MasterTimerViewController: UIViewController {
         case is RaceCreationViewController:
             cancel(sender as Any)
         default:
-        //set race duration if it is a relay
-            if race!.relay {
-                race!.totalDuration = masterTimerClock.text!
-            }
-            
-        //append current race to global race array
-        allRaces.insert(race!, at: 0)
-       
-        // Encode data
-        let jsonEncoder = JSONEncoder()
-        do {
-            let jsonData = try jsonEncoder.encode(allRaces)
-            let jsonString = String(data: jsonData, encoding: .utf8)
-            print("JSON String : " + jsonString!)
-            //save data
-            NSKeyedArchiver.archiveRootObject(jsonData, toFile: fileFolder)
-        }
-        catch {
-        }
+            //set race duration if it is a relay
+                if race!.relay {
+                    race!.totalDuration = masterTimerClock.text!
+                }
         
-        let destination = segue.destination as? RaceReportViewController
-        destination!.race = self.race
+                //change race status to completed
+                race!.completed = true
+                
+                //append current race to global race array if unique
+                switch allRaces.contains(race!) {
+                    case true:
+                        break
+                    default:
+                        allRaces.insert(race!, at: 0)
+                }
+                
+                // Encode data
+                encodeData()
+        
+                let destination = segue.destination as? RaceReportViewController
+                destination!.race = self.race
         }
         
     }

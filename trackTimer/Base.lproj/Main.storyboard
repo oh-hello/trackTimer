@@ -100,7 +100,7 @@
                                         <rect key="frame" x="0.0" y="28" width="984" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="A4H-uA-kPx" id="Xm9-6W-G4b">
-                                            <rect key="frame" x="0.0" y="0.0" width="984" height="74.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="984" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -171,7 +171,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddg-NY-4Rc">
-                                                <rect key="frame" x="8" y="42" width="114" height="39"/>
+                                                <rect key="frame" x="8" y="42" width="114" height="40"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="FjallaOne-Regular" family="Fjalla One" pointSize="25"/>
                                                 <state key="normal" title="Cancel"/>
@@ -180,13 +180,13 @@
                                                     <segue destination="BYZ-38-t0r" kind="show" identifier="toHome" animates="NO" id="BvT-3I-qNb"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEv-RQ-5F4">
-                                                <rect key="frame" x="901" y="42" width="115" height="34"/>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jmz-Ec-aXo">
+                                                <rect key="frame" x="877" y="45" width="135" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="FjallaOne-Regular" family="Fjalla One" pointSize="25"/>
-                                                <state key="normal" title="Save"/>
+                                                <state key="normal" title="Save for Later"/>
                                                 <connections>
-                                                    <action selector="saveToTimer:" destination="GX4-hU-Xbz" eventType="touchUpInside" id="UoN-Vi-nwG"/>
+                                                    <action selector="saveRace:" destination="GX4-hU-Xbz" eventType="touchUpInside" id="PYx-Qw-vEV"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of Runners:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iG8-Xw-uqT">
@@ -240,6 +240,15 @@
                                                 <rect key="frame" x="799" y="110" width="49" height="31"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </switch>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEv-RQ-5F4">
+                                                <rect key="frame" x="887" y="100" width="115" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="FjallaOne-Regular" family="Fjalla One" pointSize="25"/>
+                                                <state key="normal" title="Run Now"/>
+                                                <connections>
+                                                    <action selector="saveRace:" destination="GX4-hU-Xbz" eventType="touchUpInside" id="yWU-Ls-sBK"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -275,7 +284,8 @@
                         <outlet property="numberPicker" destination="KmG-pK-WCq" id="plB-OE-6tA"/>
                         <outlet property="relaySwitch" destination="CUb-hV-Xy5" id="YdS-D7-Edh"/>
                         <outlet property="runController" destination="H44-eg-FRg" id="rbK-BB-zAZ"/>
-                        <outlet property="saveButton" destination="SEv-RQ-5F4" id="X8j-l3-3Px"/>
+                        <outlet property="runNowButton" destination="SEv-RQ-5F4" id="P2I-cx-CPj"/>
+                        <outlet property="saveForLaterButton" destination="Jmz-Ec-aXo" id="c3P-w3-eZd"/>
                         <outlet property="viewScroller" destination="yx3-Mv-L3n" id="EvB-e8-fVM"/>
                         <segue destination="ZfU-vv-HLo" kind="show" identifier="toTimer" animates="NO" id="SIj-wK-ZJh"/>
                     </connections>
@@ -439,7 +449,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJ5-Xw-Ww2">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJ5-Xw-Ww2">
                                 <rect key="frame" x="934" y="42" width="70" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="FjallaOne-Regular" family="Fjalla One" pointSize="25"/>
@@ -471,6 +481,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6K-UZ-go5">
+                                <rect key="frame" x="929" y="42" width="81" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="FjallaOne-Regular" family="Fjalla One" pointSize="25"/>
+                                <state key="normal" title="Run Now"/>
+                                <connections>
+                                    <action selector="runSavedRace:" destination="BvG-YP-gac" eventType="touchUpInside" id="0Sv-Fp-l8D"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -493,12 +512,15 @@
                     <connections>
                         <outlet property="dateLabel" destination="X5e-tk-UPP" id="R9v-H1-tvL"/>
                         <outlet property="distanceLabel" destination="hMx-rl-E0B" id="MvM-rR-y3A"/>
+                        <outlet property="exportButton" destination="UJ5-Xw-Ww2" id="QGV-TZ-dln"/>
                         <outlet property="locationLabel" destination="dUO-PO-96G" id="fWk-mY-6dS"/>
                         <outlet property="reportScroll" destination="5T8-wo-hc9" id="2hF-JS-4fi"/>
+                        <outlet property="runNowButton" destination="r6K-UZ-go5" id="cfh-qM-eWi"/>
                         <outlet property="timeLabel" destination="EN0-Pa-ctk" id="nnd-K2-ceE"/>
                         <outlet property="timeReportStack" destination="dKt-Hh-6yU" id="o9r-gk-z6V"/>
                         <outlet property="totalLabel" destination="cwn-lU-DWK" id="oLM-ec-rwJ"/>
                         <segue destination="sUK-l6-m5X" kind="show" identifier="toArchiveFromReport" animates="NO" id="MR4-ny-bDg"/>
+                        <segue destination="ZfU-vv-HLo" kind="show" identifier="toTimerFromReport" animates="NO" id="vRl-sc-d7D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ixk-5I-FQU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -510,8 +532,9 @@
         <image name="trackTimerLogo" width="320" height="320"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fwJ-hP-RrE"/>
+        <segue reference="by2-bI-thQ"/>
+        <segue reference="vRl-sc-d7D"/>
         <segue reference="MR4-ny-bDg"/>
-        <segue reference="UzL-dq-V7Z"/>
+        <segue reference="BvT-3I-qNb"/>
     </inferredMetricsTieBreakers>
 </document>

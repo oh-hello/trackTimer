@@ -19,6 +19,8 @@ class RaceReportViewController: UIViewController {
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var runNowButton: UIButton!
+    @IBOutlet weak var exportButton: UIButton!
     
     var race: Race?
     
@@ -41,6 +43,14 @@ class RaceReportViewController: UIViewController {
         default:
             totalLabel.isHidden = true
             timeLabel.isHidden = true
+        }
+        
+        //Make Buttons available based on race state
+        switch race!.completed {
+        case true:
+            exportButton.isHidden = false
+        default:
+            runNowButton.isHidden = false
         }
         
         reportScroll.contentInset.left = 20.0
@@ -136,4 +146,20 @@ class RaceReportViewController: UIViewController {
         performSegue(withIdentifier: "toArchiveFromReport", sender: sender)
     }
     
+    @IBAction func runSavedRace(_ sender: Any) {
+        performSegue(withIdentifier: "toTimerFromReport", sender: sender)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        super.prepare(for: segue, sender: sender)
+        
+        switch segue.destination{
+        case is ArchiveViewController:
+            break
+        default:
+            let destination = segue.destination as? MasterTimerViewController
+            destination!.race = self.race
+        }
+        
+    }
 }

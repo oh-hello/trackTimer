@@ -19,15 +19,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //load data
-        guard let jsonData = NSKeyedUnarchiver.unarchiveObject(withFile: fileFolder) as? Data else { return }
-        let jsonDecoder = JSONDecoder()
-        do {
-            // Decode data
-            allRaces = try jsonDecoder.decode([Race].self, from: jsonData)
-        }
-        catch {
-        }
+        decodeData()
     }
 
     override func didReceiveMemoryWarning() {

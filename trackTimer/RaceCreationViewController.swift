@@ -19,7 +19,8 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
     @IBOutlet weak var locationField: UITextField!
     @IBOutlet weak var distanceField: UITextField!
     @IBOutlet weak var numberPicker: UIPickerView!
-    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var runNowButton: UIButton!
+    @IBOutlet weak var saveForLaterButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var runController: RunnerControl!
     @IBOutlet weak var relaySwitch: UISwitch!
@@ -215,7 +216,7 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
         dismiss(animated: false, completion: nil)
     }
     
-    @IBAction func saveToTimer(_ sender: Any) {
+    @IBAction func saveRace(_ sender: UIButton) {
         
         //Setup Runners to pass
         runnerList = createRunners()
@@ -231,6 +232,12 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
         case nil:
             showNilRaceAlert()
         default:
+            if sender == saveForLaterButton {
+                allRaces.insert(race!, at: 0)
+                encodeData()
+                cancel(sender)
+            }
+            
             performSegue(withIdentifier: "toTimer", sender: sender)
         }
     }

@@ -159,3 +159,10 @@ class Runner: Codable {
     }
     
 }
+
+//custom comparison behavior
+extension Runner: Equatable {
+    static func == (lhs: Runner, rhs: Runner) -> Bool {
+        return lhs.nameFirst == rhs.nameFirst && lhs.runnerTimesFormatted == rhs.runnerTimesFormatted
+    }
+}

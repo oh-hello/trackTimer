@@ -11,6 +11,8 @@ import UIKit
 
 var allRaces = [Race]()
 
+//MARK: Persistent Functions
+
 //creates file name for saving races
 var fileFolder: String {
     
@@ -19,6 +21,34 @@ var fileFolder: String {
     return DocumentsDirectory.appendingPathComponent("trackTimerSaveFolder").path
 }
 
+//Encodes data
+func encodeData() {
+    let jsonEncoder = JSONEncoder()
+    do {
+        let jsonData = try jsonEncoder.encode(allRaces)
+        let jsonString = String(data: jsonData, encoding: .utf8)
+        print("JSON String : " + jsonString!)
+        //save data
+        NSKeyedArchiver.archiveRootObject(jsonData, toFile: fileFolder)
+    }
+    catch {
+    }
+}
+
+//Decodes Data
+func decodeData() {
+    //load data
+    guard let jsonData = NSKeyedUnarchiver.unarchiveObject(withFile: fileFolder) as? Data else { return }
+    let jsonDecoder = JSONDecoder()
+    do {
+        //Decode data
+        allRaces = try jsonDecoder.decode([Race].self, from: jsonData)
+    }
+    catch {
+    }
+}
+
+//MARK: CSV Functions
 //create a csv file for a race
 func createRaceCSV(_ race: Race) -> String {
     var csv = "\(race.date),\(race.location),\(race.distance ?? "")"
@@ -66,6 +96,7 @@ func createAllRacesCSV() -> String {
     return csv
 }
 
+//MARK: Constants
 //color constants
 let stopColor = UIColor(red: 230/255, green: 184/255, blue: 175/255, alpha: 1.0)
 let lapColor = UIColor(red: 182/255, green: 215/255, blue: 168/255, alpha: 1.0)
