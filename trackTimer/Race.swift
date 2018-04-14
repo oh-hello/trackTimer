@@ -9,7 +9,7 @@
 import UIKit
 import os.log
 
-class Race: Codable {
+class Race: Codable, Equatable {
     
     //MARK: Properties
     
@@ -52,11 +52,9 @@ class Race: Codable {
         
     }
     
-}
-
-//custom comparison behavior
-extension Race: Equatable {
+    //MARK: Equatable adjustments
     static func == (lhs: Race, rhs: Race) -> Bool {
         return lhs.date == rhs.date && lhs.location == rhs.location && lhs.runnerList == rhs.runnerList
     }
+    
 }

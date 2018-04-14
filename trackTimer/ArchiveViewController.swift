@@ -24,7 +24,26 @@ class ArchiveViewController: UIViewController, UITableViewDelegate, UITableViewD
     //creates cells and how the cell is named
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
-        cell.textLabel?.text = allRaces[indexPath.row].date + " " + allRaces[indexPath.row].location + " " + allRaces[indexPath.row].distance!
+        
+        let label1 = UILabel(frame: CGRect(x: 15, y: 0, width: 2 * cell.frame.width/3, height: cell.frame.height))
+        
+        let label2 = UILabel(frame: CGRect(x: 2 * cell.frame.width/3, y: 0, width: cell.frame.width/3.25, height: cell.frame.height))
+        
+        label1.text = allRaces[indexPath.row].date + " " + allRaces[indexPath.row].location + " " + allRaces[indexPath.row].distance!
+        
+        if allRaces[indexPath.row].completed {
+            label2.text = "Completed"
+        }
+        else {
+            label2.text = "Saved"
+        }
+        
+        label2.textAlignment = .right
+        
+        cell.addSubview(label1)
+        
+        cell.addSubview(label2)
+        
         return cell
     }
     

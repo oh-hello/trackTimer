@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Runner: Codable {
+class Runner: Codable, Equatable {
     
     //MARK: Properties
     
@@ -49,6 +49,11 @@ class Runner: Codable {
         case nameFirst
         case nameLast
         case runnerTimesFormatted
+    }
+    
+    //MARK: Equatable adjustments
+    static func == (lhs: Runner, rhs: Runner) -> Bool {
+        return lhs.nameFirst == rhs.nameFirst && lhs.runnerTimesFormatted == rhs.runnerTimesFormatted
     }
     
     //MARK: Methods
@@ -158,11 +163,4 @@ class Runner: Codable {
         convertFormat()
     }
     
-}
-
-//custom comparison behavior
-extension Runner: Equatable {
-    static func == (lhs: Runner, rhs: Runner) -> Bool {
-        return lhs.nameFirst == rhs.nameFirst && lhs.runnerTimesFormatted == rhs.runnerTimesFormatted
-    }
 }
