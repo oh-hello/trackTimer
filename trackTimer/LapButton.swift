@@ -19,12 +19,12 @@ class LapButton: UIButton {
         
         backgroundColor = UIColor.lightGray
         layer.cornerRadius = 20
-        setTitle("Lap", for: UIControlState.normal)
+        setTitle("\(runner.nameFirst) \(runner.nameLast ?? "")", for: UIControlState.normal)
         titleLabel?.font = UIFont(name: "FjallaOne-Regular", size: 30)
         setTitleColor(UIColor.black, for: UIControlState.normal)
         setTitleColor(UIColor.lightGray, for: UIControlState.highlighted)
         layer.borderWidth = 2
-        frame.size = CGSize(width: 60, height: 50)
+        frame.size = CGSize(width: 350, height: 50)
         
         //disable on initialization
         isEnabled = false 

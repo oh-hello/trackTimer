@@ -114,9 +114,9 @@ class MasterTimerViewController: UIViewController {
             let currentRunner = race?.runnerList[x]
             
             //create Name Label
-            let runnerName = UILabel()
-            runnerName.text = "\(currentRunner?.nameFirst ?? "Runner") \(currentRunner?.nameLast ?? "")"
-            runnerName.font = UIFont(name: "OpenSans-Regular", size: 20)
+            //let runnerName = UILabel()
+            //runnerName.text = "\(currentRunner?.nameFirst ?? "Runner") \(currentRunner?.nameLast ?? "")"
+            //runnerName.font = UIFont(name: "OpenSans-Regular", size: 20)
             
             
             //create Buttons
@@ -144,7 +144,7 @@ class MasterTimerViewController: UIViewController {
             horizontalStack.spacing = 10
             
             //add to horizontal stack
-            horizontalStack.addArrangedSubview(runnerName)
+            //horizontalStack.addArrangedSubview(runnerName)
             horizontalStack.addArrangedSubview(lap)
             horizontalStack.addArrangedSubview(stop)
             
