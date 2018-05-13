@@ -20,6 +20,7 @@ class RaceReportViewController: UIViewController {
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var runNowButton: UIButton!
+    @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var exportButton: UIButton!
     
     var race: Race?
@@ -51,6 +52,7 @@ class RaceReportViewController: UIViewController {
             exportButton.isHidden = false
         default:
             runNowButton.isHidden = false
+            editButton.isHidden = false
         }
         
         reportScroll.contentInset.left = 20.0
@@ -115,7 +117,7 @@ class RaceReportViewController: UIViewController {
     //MARK: Export
     
     @IBAction func export(_ sender: UIButton) {
-        let fileName = "\(race?.location ?? "practice") \(race?.distance ?? "").csv"
+        let fileName = "\(race?.location ?? "Practice") \(race?.distance ?? "").csv"
         let path = NSURL(fileURLWithPath:NSTemporaryDirectory()).appendingPathComponent(fileName)
         //call to create race csv
         let raceCSV = createRaceCSV(race!)
@@ -150,12 +152,20 @@ class RaceReportViewController: UIViewController {
         performSegue(withIdentifier: "toTimerFromReport", sender: sender)
     }
     
+    @IBAction func editSavedRace(_ sender: Any) {
+        performSegue(withIdentifier: "toRaceCreationFromReport", sender: sender)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         super.prepare(for: segue, sender: sender)
         
         switch segue.destination{
         case is ArchiveViewController:
             break
+        case is RaceCreationViewController:
+            let destination = segue.destination as? RaceCreationViewController
+            destination!.race = self.race
+            destination!.editingRace = true
         default:
             let destination = segue.destination as? MasterTimerViewController
             destination!.race = self.race

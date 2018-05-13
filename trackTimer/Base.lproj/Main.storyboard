@@ -103,7 +103,7 @@
                                         <rect key="frame" x="0.0" y="28" width="984" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="A4H-uA-kPx" id="Xm9-6W-G4b">
-                                            <rect key="frame" x="0.0" y="0.0" width="984" height="75"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="984" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -507,6 +507,15 @@
                                     <action selector="runSavedRace:" destination="BvG-YP-gac" eventType="touchUpInside" id="0Sv-Fp-l8D"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2o-3i-3Az">
+                                <rect key="frame" x="927" y="81" width="85" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="FjallaOne-Regular" family="Fjalla One" pointSize="25"/>
+                                <state key="normal" title="Edit"/>
+                                <connections>
+                                    <action selector="editSavedRace:" destination="BvG-YP-gac" eventType="touchUpInside" id="UX1-uE-6rg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -529,6 +538,7 @@
                     <connections>
                         <outlet property="dateLabel" destination="X5e-tk-UPP" id="R9v-H1-tvL"/>
                         <outlet property="distanceLabel" destination="hMx-rl-E0B" id="MvM-rR-y3A"/>
+                        <outlet property="editButton" destination="S2o-3i-3Az" id="g9W-xE-Oyn"/>
                         <outlet property="exportButton" destination="UJ5-Xw-Ww2" id="QGV-TZ-dln"/>
                         <outlet property="locationLabel" destination="dUO-PO-96G" id="fWk-mY-6dS"/>
                         <outlet property="reportScroll" destination="5T8-wo-hc9" id="2hF-JS-4fi"/>
@@ -538,6 +548,7 @@
                         <outlet property="totalLabel" destination="cwn-lU-DWK" id="oLM-ec-rwJ"/>
                         <segue destination="sUK-l6-m5X" kind="show" identifier="toArchiveFromReport" animates="NO" id="MR4-ny-bDg"/>
                         <segue destination="ZfU-vv-HLo" kind="show" identifier="toTimerFromReport" animates="NO" id="vRl-sc-d7D"/>
+                        <segue destination="GX4-hU-Xbz" kind="show" identifier="toRaceCreationFromReport" animates="NO" id="LNP-px-xdS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ixk-5I-FQU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -549,9 +560,10 @@
         <image name="trackTimerLogo" width="320" height="320"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fwJ-hP-RrE"/>
-        <segue reference="vRl-sc-d7D"/>
+        <segue reference="by2-bI-thQ"/>
+        <segue reference="SIj-wK-ZJh"/>
+        <segue reference="LNP-px-xdS"/>
         <segue reference="MR4-ny-bDg"/>
-        <segue reference="UzL-dq-V7Z"/>
+        <segue reference="BvT-3I-qNb"/>
     </inferredMetricsTieBreakers>
 </document>

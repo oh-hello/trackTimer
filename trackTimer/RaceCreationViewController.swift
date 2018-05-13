@@ -29,6 +29,9 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
     //Race contstructed based on race info input by user
     var race: Race?
     var runnerList = [Runner]()
+    
+    //Race editing controller
+    var editingRace = false
 
     
     //MARK: Life Cycle
@@ -69,6 +72,25 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
         //Set default picker value and RunnerControl Fields when view loads
         numberPicker.selectRow(0, inComponent: 0, animated: false)
         runController.updateNumberOfTextfields(pickerData[0][numberPicker.selectedRow(inComponent:0)])
+        
+        //format view to edit existing Race
+        if race != nil {
+            dateLabel.text = race?.date
+            locationField.text = race?.location
+            distanceField.text = race?.distance
+            
+            numberPicker.selectRow(race!.runnerList.count - 1, inComponent: 0, animated: false)
+            runController.updateNumberOfTextfields(race!.runnerList.count)
+            
+            relaySwitch.isOn = race!.relay
+            numRunLabel.isHidden = race!.relay
+            numberPicker.isHidden = race!.relay
+            
+            for x in 0..<runController.allNameFields.count {
+                runController.allNameFields[x][0].text = race?.runnerList[x].nameFirst
+                runController.allNameFields[x][1].text = race?.runnerList[x].nameLast
+            }
+        }
         
     }
 
@@ -217,23 +239,40 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
     }
     
     @IBAction func saveRace(_ sender: UIButton) {
-        
+        var raceOk:Bool
         //Setup Runners to pass
         runnerList = createRunners()
         
-        //Setup Race to pass
-        let date = dateLabel.text
-        let location = locationField.text
-        let distance = distanceField.text
-        createRace(date!, location!, distance!, runnerList, relaySwitch.isOn)
+        //update edited Race
+        if race != nil {
+            raceOk = race!.updateRace(runnerList)
+        }
+            
+        else{
+            //Setup Race to pass
+            let date = dateLabel.text
+            let location = locationField.text
+            let distance = distanceField.text
+            createRace(date!, location!, distance!, runnerList, relaySwitch.isOn)
+            
+            //check for nil race
+            if race == nil {
+                raceOk = false
+            }
+            else{
+                raceOk = true
+            }
+        }
         
-        //check nil race of perform segue
-        switch race{
-        case nil:
+        //check if Race nil and perform segue
+        switch raceOk{
+        case false:
             showNilRaceAlert()
         default:
             if sender == saveForLaterButton {
-                allRaces.insert(race!, at: 0)
+                if !editingRace{
+                    allRaces.insert(race!, at: 0)
+                }
                 encodeData()
                 cancel(sender)
             }

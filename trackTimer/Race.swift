@@ -52,6 +52,15 @@ class Race: Codable, Equatable {
         
     }
     
+    //MARK: Functions
+    func updateRace(_ newRunnerList: [Runner]) -> Bool{
+        if newRunnerList.count > 0 {
+            runnerList = newRunnerList
+            return true
+        }
+        return false
+    }
+    
     //MARK: Equatable adjustments
     static func == (lhs: Race, rhs: Race) -> Bool {
         return lhs.date == rhs.date && lhs.location == rhs.location && lhs.runnerList == rhs.runnerList
