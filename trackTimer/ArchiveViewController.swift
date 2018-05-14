@@ -8,12 +8,12 @@
 
 import UIKit
 
-var myIndex = 0
+
 
 class ArchiveViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var archiveTable: UITableView!
-    
+    var myIndex = 0
     
     //MARK: Table Functions
     //sets numbers of rows that the table has
@@ -115,6 +115,7 @@ class ArchiveViewController: UIViewController, UITableViewDelegate, UITableViewD
         if segue.identifier == "toRaceReportFromArchive" {
             let destination = segue.destination as? RaceReportViewController
             destination!.race = allRaces[myIndex]
+            
         }
     }
     

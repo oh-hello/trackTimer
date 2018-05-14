@@ -560,10 +560,10 @@
         <image name="trackTimerLogo" width="320" height="320"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="by2-bI-thQ"/>
-        <segue reference="SIj-wK-ZJh"/>
+        <segue reference="fwJ-hP-RrE"/>
+        <segue reference="vRl-sc-d7D"/>
         <segue reference="LNP-px-xdS"/>
         <segue reference="MR4-ny-bDg"/>
-        <segue reference="BvT-3I-qNb"/>
+        <segue reference="UzL-dq-V7Z"/>
     </inferredMetricsTieBreakers>
 </document>
