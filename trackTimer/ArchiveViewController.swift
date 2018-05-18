@@ -15,6 +15,12 @@ class ArchiveViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var archiveTable: UITableView!
     var myIndex = 0
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(false)
+        
+        archiveTable.allowsMultipleSelection = true
+    }
+    
     //MARK: Table Functions
     //sets numbers of rows that the table has
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -27,7 +33,7 @@ class ArchiveViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let label1 = UILabel(frame: CGRect(x: 15, y: 0, width: 2 * cell.frame.width/3, height: cell.frame.height))
         
-        let label2 = UILabel(frame: CGRect(x: 2 * cell.frame.width/3, y: 0, width: cell.frame.width/3.25, height: cell.frame.height))
+        let label2 = UILabel(frame: CGRect(x: 2 * cell.frame.width/3, y: 0, width: cell.frame.width/3.25 - 40, height: cell.frame.height))
         
         label1.text = allRaces[indexPath.row].date + " " + allRaces[indexPath.row].location + " " + allRaces[indexPath.row].distance!
         
@@ -43,6 +49,8 @@ class ArchiveViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.addSubview(label1)
         
         cell.addSubview(label2)
+        
+        cell.accessoryType = .detailButton
         
         return cell
     }
@@ -61,21 +69,54 @@ class ArchiveViewController: UIViewController, UITableViewDelegate, UITableViewD
         let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (rowAction: UITableViewRowAction, indexPath: IndexPath) -> Void in
     }
     
+    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        let cell = archiveTable.cellForRow(at: indexPath)
+        
+        //select/unselect cell
+        cell!.isSelected = !cell!.isSelected
+        if cell!.isSelected {
+            archiveTable.selectRow(at: indexPath, animated: false, scrollPosition: UITableViewScrollPosition.none)
+        }
+        else {
+            archiveTable.deselectRow(at: indexPath, animated: false)
+        }
+    }
+    
     //MARK: Actions
+    
+    func presentAlert() {
+        let alert = UIAlertController(title: "Export Failed", message: "No races were selected. Please select races before exporting", preferredStyle: UIAlertControllerStyle.alert)
+        let OKAction = UIAlertAction(title: "OK", style: .cancel) { action in
+            // ...
+        }
+        alert.addAction(OKAction)
+        self.present(alert, animated: true, completion: nil)
+    }
     
     @IBAction func exportAllRaces(_ sender: UIButton) {
         print("export called")
+        
+        if archiveTable.indexPathsForSelectedRows == nil {
+            presentAlert()
+            return
+        }
+
+        //compile rounds
+        var selectedRaces = [Race]()
+        for indexPath in archiveTable.indexPathsForSelectedRows!{
+            selectedRaces.append(allRaces[indexPath.row])
+        }
         
         let currentDate = NSDate()
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.locale = NSLocale.current
         
-        let fileName = "All Race Export \(dateFormatter.string(from: currentDate as Date)).csv"
+        let fileName = "trackTimer Batch Export \(dateFormatter.string(from: currentDate as Date)).csv"
         let path = NSURL(fileURLWithPath:NSTemporaryDirectory()).appendingPathComponent(fileName)
         
         //call to create race csv
-        let allRacesCSV = createAllRacesCSV()
+        let allRacesCSV = createBatchRacesCSV(selectedRaces: selectedRaces)
         print(allRacesCSV)
         
         //save the race csv file

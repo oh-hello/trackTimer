@@ -71,10 +71,10 @@ func createRaceCSV(_ race: Race) -> String {
 }
 
 //create a csv file for all archived races
-func createAllRacesCSV() -> String {
-    var csv = "All Races"
+func createBatchRacesCSV(selectedRaces: [Race]) -> String {
+    var csv = "Races"
     
-    for race in allRaces {
+    for race in selectedRaces {
         csv.append("\n")
         csv.append("\(race.date),\(race.location),\(race.distance ?? "")")
         
