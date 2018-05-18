@@ -11,7 +11,7 @@ import UIKit
 
 var allRaces = [Race]()
 
-//MARK: Persistent Functions
+//MARK: Persistence Functions
 
 //creates file name for saving races
 var fileFolder: String {
