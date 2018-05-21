@@ -245,7 +245,7 @@ class RaceCreationViewController: UIViewController,UIPickerViewDataSource, UIPic
         
         //update edited Race
         if race != nil {
-            raceOk = race!.updateRace(runnerList)
+            raceOk = race!.updateRace(runnerList, locationField.text!, distanceField.text!)
         }
             
         else{

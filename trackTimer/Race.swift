@@ -53,12 +53,22 @@ class Race: Codable, Equatable {
     }
     
     //MARK: Functions
-    func updateRace(_ newRunnerList: [Runner]) -> Bool{
+    func updateRace(_ newRunnerList: [Runner], _ location: String, _ distance: String) -> Bool{
+        var updateSuccessful = false
         if newRunnerList.count > 0 {
             runnerList = newRunnerList
-            return true
+            
+            var tempLocation = location
+            if tempLocation.isEmpty {
+                tempLocation = "Practice"
+            }
+            
+            self.location = tempLocation
+            self.distance = distance
+            
+            updateSuccessful = true
         }
-        return false
+        return updateSuccessful
     }
     
     //MARK: Equatable adjustments
